@@ -1,0 +1,18 @@
+.titleWrapper {
+  color: white;
+  display: flex;
+  height: 100%;
+}
+
+.rotate {
+  writing-mode: vertical-rl;
+  transform: rotate(-180deg);
+}
+
+.name {
+  font-size: 20px;
+}
+
+.date {
+  font-size: 30px;
+}

@@ -29,7 +29,6 @@ const Model = ({ gltfPath }: any) => {
 
   // Access the first mesh in the GLTF model and apply a texture
   if (gltf.scene) {
-    console.log('I have a gltf file')
     const model = gltf.scene.children[0]
     return <primitive object={model} />
   }

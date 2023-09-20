@@ -1,0 +1,9 @@
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  width: 100vw;
+  height: 100vh;
+}
