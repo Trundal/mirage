@@ -102,7 +102,7 @@ p {
 
 ul {
   list-style-type: none;
-  margin: 12px 0;
+  margin-bottom: 1rem;
 }
 
 a {
