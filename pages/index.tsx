@@ -8,6 +8,14 @@ import PageContainer from '../components/layout/Container/Container'
 import Header from '../components/layout/Header/Header'
 import Footer from '../components/layout/Footer/Footer'
 
+import dynamic from 'next/dynamic'
+
+// Load ThreeJsComponent dynamically on the client side
+const DynamicThreeJsComponent = dynamic(
+  () => import('../components/Scenes/MirageObject/MirageObject'),
+  { ssr: false } // Ensure it's not loaded on the server
+)
+
 export default function Home() {
   return (
     <>
@@ -19,6 +27,7 @@ export default function Home() {
       </Head>
       <PageContainer>
         <Header />
+        {/* <DynamicThreeJsComponent /> */}
         {/* <div className={styles.canvasContainer}>
           <Suspense fallback={null}>
             <ToPScene />

@@ -5,7 +5,7 @@ export default function ImpressumPage() {
     <main className={styles.wrapper}>
       <h2>IMPRESSUM</h2>
       <p>Angaben gemäß § 5 TMG</p>
-      <h2>MIRAGE</h2>
+      <h3>MIRAGE</h3>
       <ul>
         <li>Virtual Art Department GmbH</li>
         <li>Reichenberger Straße 125</li>
@@ -19,15 +19,16 @@ export default function ImpressumPage() {
       <ul>
         <li>Vertreten durch:</li>
         <li>Frank Hinrichs</li>
-        <li>André Hasenöhr</li>
+        <li>André Hasenöhrl</li>
       </ul>
       <ul>
         <li>Registergericht: Berlin Charlottenburg</li>
         <li>Registernummer: HRB 247106 B</li>
         <li>Umsatzsteuer-ID: DE357953930</li>
       </ul>
-      <h2>Haftungsausschluss:</h2>
-      <h2>Haftung für Inhalte</h2>
+      <div className={styles.spacer}> </div>
+      <h2>HAFTUNGSAUSSCHLUSS</h2>
+      <h3>Haftung für Inhalte</h3>
       <p className={styles.justify}>
         Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die
         Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir
@@ -44,7 +45,7 @@ export default function ImpressumPage() {
         entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend
         entfernen.
       </p>
-      <h2>Haftung für Links</h2>
+      <h3>Haftung für Links</h3>
       <p className={styles.justify}>
         Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren
         Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden
@@ -57,7 +58,7 @@ export default function ImpressumPage() {
         Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden
         von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
       </p>
-      <h2>Urheberrecht</h2>
+      <h3>Urheberrecht</h3>
       <p className={styles.justify}>
         Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen
         Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung,
@@ -72,7 +73,7 @@ export default function ImpressumPage() {
         entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden
         wir derartige Inhalte umgehend entfernen.
       </p>
-      <h2>Datenschutz</h2>
+      <h3>Datenschutz</h3>
       <p className={styles.justify}>
         Die Nutzung unserer Webseite ist in der Regel ohne Angabe
         personenbezogener Daten möglich. Soweit auf unseren Seiten
@@ -83,8 +84,7 @@ export default function ImpressumPage() {
         die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail)
         Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor
         dem Zugriff durch Dritte ist nicht möglich.
-      </p>
-      <p className={styles.justify}>
+        <br />
         Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten
         Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich
         angeforderter Werbung und Informationsmaterialien wird hiermit
