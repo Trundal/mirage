@@ -1,4 +1,5 @@
 .link {
   writing-mode: vertical-rl;
   transform: rotate(-180deg);
+  margin: 5px 0;
 }

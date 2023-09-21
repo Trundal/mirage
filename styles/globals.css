@@ -1,3 +1,31 @@
+@font-face {
+  font-family: 'Mabry';
+  src: url('../fonts/mabry/Mabry-Pro-Medium.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mabry';
+  src: url('../fonts/mabry/Mabry-Pro-Bold.otf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mabry';
+  src: url('../fonts/mabry/Mabry-Pro-Light.otf');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mabry';
+  src: url('../fonts/mabry/Mabry-Pro-Italic.otf');
+  font-weight: normal;
+  font-style: italic;
+}
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -83,16 +111,20 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  font-family: 'Mabry', sans-serif;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+h2 {
+  margin: 16px 0;
+}
+
+p {
+  margin: 12px 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 12px 0;
 }
 
 a {

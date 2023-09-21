@@ -1,1 +1,9 @@
-
+.tagWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-weight: lighter;
+  padding-right: 40px;
+  font-size: 1rem;
+  text-align: right;
+}
