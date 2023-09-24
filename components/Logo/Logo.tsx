@@ -4,7 +4,11 @@ import Image from 'next/image'
 export default function Logo() {
   return (
     <div className={styles.logoWrapper}>
-      <img src="/logo.png" alt="Logo" className={styles.image} />
+      <img
+        src="/mirage_logo_rotated_white_v7.svg"
+        alt="Logo"
+        className={styles.image}
+      />
     </div>
   )
 }
