@@ -7,7 +7,7 @@ import { Environment, OrbitControls } from '@react-three/drei'
 function CustomCanvas() {
   return (
     <Canvas>
-      <OrbitControls enableZoom={false} />
+      <OrbitControls enableRotate={true} enableZoom={false} enablePan={false} />
       <ambientLight intensity={0.5} />
       <directionalLight intensity={0.8} position={[1, 1, 1]} />
       <Environment preset="dawn" background={false} blur={0.6} />
