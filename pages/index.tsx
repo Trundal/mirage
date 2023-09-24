@@ -3,18 +3,9 @@ import ToPScene from '@/components/Scenes/ToP/ToP'
 
 import styles from '@/styles/Home.module.css'
 import { Suspense } from 'react'
-import Logo from '../components/Logo/Logo'
 import PageContainer from '../components/layout/Container/Container'
 import Header from '../components/layout/Header/Header'
 import Footer from '../components/layout/Footer/Footer'
-
-import dynamic from 'next/dynamic'
-
-// Load ThreeJsComponent dynamically on the client side
-const DynamicThreeJsComponent = dynamic(
-  () => import('../components/Scenes/MirageObject/MirageObject'),
-  { ssr: false } // Ensure it's not loaded on the server
-)
 
 export default function Home() {
   return (
@@ -27,12 +18,11 @@ export default function Home() {
       </Head>
       <PageContainer>
         <Header />
-        {/* <DynamicThreeJsComponent /> */}
-        {/* <div className={styles.canvasContainer}>
+        <div className={styles.canvasContainer}>
           <Suspense fallback={null}>
             <ToPScene />
           </Suspense>
-        </div> */}
+        </div>
         <Footer />
       </PageContainer>
     </>
