@@ -7,3 +7,9 @@
   font-size: 1rem;
   text-align: right;
 }
+
+@media (max-width: 600px) {
+  .tagWrapper {
+    display: none;
+  }
+}
