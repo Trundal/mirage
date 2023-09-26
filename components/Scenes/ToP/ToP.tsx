@@ -54,7 +54,8 @@ function PrimitiveModel({ model, modelRef }) {
     modelRef.current.position.x = Math.sin(state.clock.elapsedTime) * 2
 
     // Rotate the model slowly around its center
-    modelRef.current.rotation.y += 0.02 * delta // Adjust the rotation speed as needed
+    modelRef.current.rotation.y += 0.2 * delta // Adjust the rotation speed as needed
+    // modelRef.current.rotation.x += 0.02 * delta // Adjust the rotation speed as needed
 
     // Optionally, you can scale the model over time
     modelRef.current.scale.x = 25 + Math.sin(state.clock.elapsedTime * 0.5) * 5
