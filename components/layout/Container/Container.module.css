@@ -7,7 +7,13 @@
   justify-content: space-between;
   background-color: black;
   color: white;
+  padding: 24px;
+
+  /* old browsers */
+  width: 100vw;
+  height: 100vh;
+
+  /* new browsers */
   width: 100dvw;
   height: 100dvh;
-  padding: 24px;
 }
