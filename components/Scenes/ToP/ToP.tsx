@@ -42,7 +42,7 @@ function Model() {
   modelRef.current = model // Store the model reference for animation
 
   // Set the initial scale of the model
-  model.scale.set(25, 25, 25)
+  model.scale.set(0.75, 0.75, 0.75)
 
   return <PrimitiveModel model={model} modelRef={modelRef} />
 }
@@ -58,9 +58,9 @@ function PrimitiveModel({ model, modelRef }) {
     // modelRef.current.rotation.x += 0.02 * delta // Adjust the rotation speed as needed
 
     // Optionally, you can scale the model over time
-    modelRef.current.scale.x = 25 + Math.sin(state.clock.elapsedTime * 0.5) * 5
-    modelRef.current.scale.y = 25 + Math.sin(state.clock.elapsedTime * 0.5) * 5
-    modelRef.current.scale.z = 25 + Math.sin(state.clock.elapsedTime * 0.5) * 5
+    // modelRef.current.scale.x = 0.5 + Math.sin(state.clock.elapsedTime * 0.5) * 5
+    // modelRef.current.scale.y = 0.5 + Math.sin(state.clock.elapsedTime * 0.5) * 5
+    // modelRef.current.scale.z = 0.5 + Math.sin(state.clock.elapsedTime * 0.5) * 5
   })
 
   return <primitive object={model} />
