@@ -10,7 +10,7 @@ function CustomCanvas() {
       <OrbitControls enableRotate={true} enableZoom={false} enablePan={false} />
       <ambientLight intensity={0.5} />
       <directionalLight intensity={0.8} position={[1, 1, 1]} />
-      <Environment preset="dawn" background={false} blur={0.6} />
+      <Environment preset="studio" background={false} blur={0.6} />
 
       <Suspense fallback={null}>
         <group>
