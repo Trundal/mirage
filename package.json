@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "@next/env": "14.2.18",
+    "@react-three/drei": "^9.120.7",
+    "@react-three/fiber": "^8.17.12",
     "@sanity/demo": "2.0.0",
     "@sanity/icons": "3.4.0",
     "@sanity/image-url": "1.1.0",
@@ -33,7 +35,8 @@
     "sanity": "3.64.1",
     "sanity-plugin-asset-source-unsplash": "3.0.1",
     "server-only": "0.0.1",
-    "styled-components": "6.1.13"
+    "styled-components": "6.1.13",
+    "three": "^0.172.0"
   },
   "devDependencies": {
     "@types/react": "18.3.12",

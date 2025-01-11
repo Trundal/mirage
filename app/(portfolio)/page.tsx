@@ -23,10 +23,9 @@ export default async function IndexRoute() {
         <Link href={`${studioUrl}/structure/home`} className="underline">
           create one now
         </Link>
-        !
       </div>
     )
   }
 
-  return <HomePage data={initial.data} />
+  return <HomePage />
 }

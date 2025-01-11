@@ -1,49 +1,23 @@
-import type { EncodeDataAttributeCallback } from '@sanity/react-loader'
-import Link from 'next/link'
+import { Suspense } from 'react'
 
-import { ProjectListItem } from '@/components/pages/home/ProjectListItem'
-import { Header } from '@/components/shared/Header'
-import { resolveHref } from '@/sanity/lib/utils'
-import type { HomePagePayload } from '@/types'
+import PageContainer from '@/components/layout/Container/Container'
+import Footer from '@/components/layout/Footer/Footer'
+import Header from '@/components/layout/Header/Header'
+import ToPScene from '@/components/Scenes/ToP/ToP'
 
-export interface HomePageProps {
-  data: HomePagePayload | null
-  encodeDataAttribute?: EncodeDataAttributeCallback
-}
+import styles from './HomePage.module.css'
 
-export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
-  // Default to an empty object to allow previews on non-existent documents
-  const { overview = [], showcaseProjects = [], title = '' } = data ?? {}
-
+export function HomePage() {
   return (
-    <div className="space-y-20">
-      {/* Header */}
-      {title && <Header centered title={title} description={overview} />}
-      {/* Showcase projects */}
-      {showcaseProjects && showcaseProjects.length > 0 && (
-        <div className="mx-auto max-w-[100rem] rounded-md border">
-          {showcaseProjects.map((project, key) => {
-            const href = resolveHref(project?._type, project?.slug)
-            if (!href) {
-              return null
-            }
-            return (
-              <Link
-                key={key}
-                href={href}
-                data-sanity={encodeDataAttribute?.([
-                  'showcaseProjects',
-                  key,
-                  'slug',
-                ])}
-              >
-                <ProjectListItem project={project} odd={key % 2} />
-              </Link>
-            )
-          })}
-        </div>
-      )}
-    </div>
+    <PageContainer>
+      <Header />
+      <div className={styles.canvasContainer}>
+        <Suspense fallback={null}>
+          <ToPScene />
+        </Suspense>
+      </div>
+      <Footer />
+    </PageContainer>
   )
 }
 
