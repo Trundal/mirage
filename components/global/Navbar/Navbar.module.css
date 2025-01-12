@@ -1,0 +1,6 @@
+.link {
+  writing-mode: vertical-rl;
+  transform: rotate(-180deg);
+  margin: 15px 10px;
+  font-size: 24px;
+}

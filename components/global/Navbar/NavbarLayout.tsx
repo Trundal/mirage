@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { resolveHref } from '@/sanity/lib/utils'
 import type { MenuItem, SettingsPayload } from '@/types'
 
+import styles from './Navbar.module.css'
+
 interface NavbarProps {
   data: SettingsPayload
 }
@@ -10,8 +12,10 @@ export default function Navbar(props: NavbarProps) {
   const { data } = props
   const menuItems = data?.menuItems || ([] as MenuItem[])
 
+  console.log('Links: menuItems = ', menuItems)
+
   return (
-    <div>
+    <div className={styles.linkWrapper}>
       {menuItems &&
         menuItems.map((menuItem, key) => {
           const href = resolveHref(menuItem?._type, menuItem?.slug)
@@ -19,17 +23,9 @@ export default function Navbar(props: NavbarProps) {
             return null
           }
           return (
-            <Link
-              key={key}
-              className={`text-lg hover:text-black md:text-xl ${
-                menuItem?._type === 'home'
-                  ? 'font-extrabold text-black'
-                  : 'text-gray-600'
-              }`}
-              href={href}
-            >
-              {menuItem.title}
-            </Link>
+            <div key={key} className={styles.link}>
+              <Link href={href}>{menuItem.title}</Link>
+            </div>
           )
         })}
     </div>

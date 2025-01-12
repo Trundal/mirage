@@ -1,7 +1,7 @@
 import Logo from '../../Logo/Logo'
-import styles from './Header.module.css'
+import styles from './LogoHeader.module.css'
 
-export default function Header() {
+export default function LogoHeader() {
   return (
     <div className={styles.headerWrapper}>
       <Logo />

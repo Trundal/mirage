@@ -1,5 +1,5 @@
-import styles from './Tags.module.css'
 import { tags } from './Tags.functions'
+import styles from './Tags.module.css'
 
 export default function Tags() {
   return (
