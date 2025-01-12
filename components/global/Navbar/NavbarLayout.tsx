@@ -12,8 +12,6 @@ export default function Navbar(props: NavbarProps) {
   const { data } = props
   const menuItems = data?.menuItems || ([] as MenuItem[])
 
-  console.log('Links: menuItems = ', menuItems)
-
   return (
     <div className={styles.linkWrapper}>
       {menuItems &&

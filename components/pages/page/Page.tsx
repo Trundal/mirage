@@ -10,12 +10,11 @@ export interface PageProps {
 }
 
 export function Page({ data }: PageProps) {
-  // Default to an empty object to allow previews on non-existent documents
   const { body, overview, title } = data ?? {}
   return (
     <div className={styles.pageContainer}>
       <LogoHeader />
-      <div>
+      <div className={styles.bodyWrapper}>
         <Header title={title} description={overview} />
         {body && <CustomPortableText value={body} />}
       </div>
