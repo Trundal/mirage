@@ -41,14 +41,33 @@ export const projectBySlugQuery = groq`
   }
 `
 
+export const portfolioPageQuery = groq`
+  *[_type == "portfolio"][0]{
+    _id,
+    overview,
+    showcaseProjects[]->{
+      _type,
+      coverImage,
+      overview,
+      "slug": slug.current,
+      tags,
+      title,
+    },
+    title,
+  }
+`
+
 export const settingsQuery = groq`
   *[_type == "settings"][0]{
-    footer,
     menuItems[]->{
       _type,
       "slug": slug.current,
       title
     },
-    ogImage,
+    footerItems[]->{
+      _type,
+      "slug": slug.current,
+      title
+    },
   }
 `

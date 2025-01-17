@@ -14,10 +14,21 @@ import * as resolve from '@/sanity/plugins/resolve'
 import { pageStructure, singletonPlugin } from '@/sanity/plugins/settings'
 import page from '@/sanity/schemas/documents/page'
 import project from '@/sanity/schemas/documents/project'
+import divider from '@/sanity/schemas/layouts/divider'
+import double_33x66 from '@/sanity/schemas/layouts/double_33x66'
+import double_50x50 from '@/sanity/schemas/layouts/double_50x50'
+import double_66x33 from '@/sanity/schemas/layouts/double_66x33'
+import single_100 from '@/sanity/schemas/layouts/single_100'
+import triple_33x33x33 from '@/sanity/schemas/layouts/triple_33x33x33'
+import blockContent from '@/sanity/schemas/objects/blockContent'
 import duration from '@/sanity/schemas/objects/duration'
+import hero from '@/sanity/schemas/objects/hero'
+import image from '@/sanity/schemas/objects/image'
 import milestone from '@/sanity/schemas/objects/milestone'
 import timeline from '@/sanity/schemas/objects/timeline'
+import video from '@/sanity/schemas/objects/video'
 import home from '@/sanity/schemas/singletons/home'
+import portfolio from '@/sanity/schemas/singletons/portfolio'
 import settings from '@/sanity/schemas/singletons/settings'
 
 const title =
@@ -35,18 +46,30 @@ export default defineConfig({
       // Singletons
       home,
       settings,
+      portfolio,
       // Documents
       duration,
       page,
       project,
+      // Layouts
+      divider,
+      single_100,
+      double_33x66,
+      double_50x50,
+      double_66x33,
+      triple_33x33x33,
       // Objects
       milestone,
       timeline,
+      hero,
+      image,
+      video,
+      blockContent,
     ],
   },
   plugins: [
     structureTool({
-      structure: pageStructure([home, settings]),
+      structure: pageStructure([home, settings, portfolio]),
     }),
     presentationTool({
       resolve,

@@ -1,13 +1,19 @@
 import type { PortableTextBlock } from 'next-sanity'
 import type { Image } from 'sanity'
 
-export interface MenuItem {
+export type MenuItem = {
   _type: string
   slug?: string
   title?: string
 }
 
-export interface MilestoneItem {
+export type HeroItem = {
+  image?: Image
+  header?: string
+  description?: string
+}
+
+export type MilestoneItem = {
   description?: string
   duration?: {
     start?: string
@@ -18,7 +24,7 @@ export interface MilestoneItem {
   title?: string
 }
 
-export interface ShowcaseProject {
+export type ShowcaseProject = {
   _type: string
   coverImage?: Image
   overview?: PortableTextBlock[]
@@ -29,14 +35,21 @@ export interface ShowcaseProject {
 
 // Page payloads
 
-export interface HomePagePayload {
+export type HomePagePayload = {
   footer?: PortableTextBlock[]
   overview?: PortableTextBlock[]
   showcaseProjects?: ShowcaseProject[]
   title?: string
 }
 
-export interface PagePayload {
+export type PortfolioPagePayload = {
+  footer?: PortableTextBlock[]
+  overview?: PortableTextBlock[]
+  showcaseProjects?: ShowcaseProject[]
+  title?: string
+}
+
+export type PagePayload = {
   body?: PortableTextBlock[]
   name?: string
   overview?: PortableTextBlock[]
@@ -44,7 +57,7 @@ export interface PagePayload {
   slug?: string
 }
 
-export interface ProjectPayload {
+export type ProjectPayload = {
   client?: string
   coverImage?: Image
   description?: PortableTextBlock[]
@@ -59,8 +72,7 @@ export interface ProjectPayload {
   title?: string
 }
 
-export interface SettingsPayload {
-  footer?: PortableTextBlock[]
+export type SettingsPayload = {
   menuItems?: MenuItem[]
-  ogImage?: Image
+  footerItems?: MenuItem[]
 }

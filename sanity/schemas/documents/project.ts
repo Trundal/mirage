@@ -28,128 +28,21 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'overview',
-      description:
-        'Used both for the <meta> description tag for SEO, and project subheader.',
-      title: 'Overview',
+      name: 'hero',
+      type: 'hero',
+    }),
+    defineField({
+      name: 'layoutBlocks',
+      title: 'Layout Blocks (Rows)',
+      description: 'Stack layout blocks to build rows of content',
       type: 'array',
       of: [
-        // Paragraphs
-        defineArrayMember({
-          lists: [],
-          marks: {
-            annotations: [],
-            decorators: [
-              {
-                title: 'Italic',
-                value: 'em',
-              },
-              {
-                title: 'Strong',
-                value: 'strong',
-              },
-            ],
-          },
-          styles: [],
-          type: 'block',
-        }),
-      ],
-      validation: (rule) => rule.max(155).required(),
-    }),
-    defineField({
-      name: 'coverImage',
-      title: 'Cover Image',
-      description:
-        'This image will be used as the cover image for the project. If you choose to add it to the show case projects, this is the image displayed in the list within the homepage.',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: 'duration',
-      title: 'Duration',
-      type: 'duration',
-    }),
-    defineField({
-      name: 'client',
-      title: 'Client',
-      type: 'string',
-    }),
-    defineField({
-      name: 'site',
-      title: 'Site',
-      type: 'url',
-    }),
-    defineField({
-      name: 'tags',
-      title: 'Tags',
-      type: 'array',
-      of: [{ type: 'string' }],
-      options: {
-        layout: 'tags',
-      },
-    }),
-    defineField({
-      name: 'description',
-      title: 'Project Description',
-      type: 'array',
-      of: [
-        defineArrayMember({
-          type: 'block',
-          marks: {
-            annotations: [
-              {
-                name: 'link',
-                type: 'object',
-                title: 'Link',
-                fields: [
-                  {
-                    name: 'href',
-                    type: 'url',
-                    title: 'Url',
-                  },
-                ],
-              },
-            ],
-          },
-          styles: [],
-        }),
-        // Custom blocks
-        defineArrayMember({
-          name: 'timeline',
-          type: 'timeline',
-        }),
-        defineField({
-          type: 'image',
-          icon: ImageIcon,
-          name: 'image',
-          title: 'Image',
-          options: {
-            hotspot: true,
-          },
-          preview: {
-            select: {
-              media: 'asset',
-              title: 'caption',
-            },
-          },
-          fields: [
-            defineField({
-              title: 'Caption',
-              name: 'caption',
-              type: 'string',
-            }),
-            defineField({
-              name: 'alt',
-              type: 'string',
-              title: 'Alt text',
-              description:
-                'Alternative text for screenreaders. Falls back on caption if not set',
-            }),
-          ],
-        }),
+        { type: 'single_100' },
+        { type: 'double_33x66' },
+        { type: 'double_50x50' },
+        { type: 'double_66x33' },
+        { type: 'triple_33x33x33' },
+        { type: 'divider' },
       ],
     }),
   ],

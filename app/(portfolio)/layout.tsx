@@ -22,7 +22,6 @@ export async function generateMetadata(): Promise<Metadata> {
     loadHomePage(),
   ])
 
-  const ogImage = urlForOpenGraphImage(settings?.ogImage)
   return {
     title: homePage?.title
       ? {
@@ -33,9 +32,6 @@ export async function generateMetadata(): Promise<Metadata> {
     description: homePage?.overview
       ? toPlainText(homePage.overview)
       : undefined,
-    openGraph: {
-      images: ogImage ? [ogImage] : [],
-    },
   }
 }
 
