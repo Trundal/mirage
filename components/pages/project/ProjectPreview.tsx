@@ -15,11 +15,9 @@ type Props = {
 
 export default function ProjectPreview(props: Props) {
   const { params, initial } = props
-  const { data, encodeDataAttribute } = useQuery<ProjectPayload | null>(
-    projectBySlugQuery,
-    params,
-    { initial },
-  )
+  const { data } = useQuery<ProjectPayload | null>(projectBySlugQuery, params, {
+    initial,
+  })
 
-  return <ProjectPage data={data!} encodeDataAttribute={encodeDataAttribute} />
+  return <ProjectPage data={data!} />
 }

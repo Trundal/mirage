@@ -1,0 +1,183 @@
+.Columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 100%;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.Col-25,
+.Col-33,
+.Col-50,
+.Col-75,
+.Col-100 {
+  display: flex;
+  flex-direction: column;
+}
+
+.Col-25 {
+  width: 50%;
+}
+
+.Col-33,
+.Col-50,
+.Col-66,
+.Col-75,
+.Col-100 {
+  width: 100%;
+}
+
+.Col-wrap--wrap {
+  flex-wrap: wrap;
+}
+
+.Col-wrap--wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.Col-grow {
+  flex-grow: 1;
+}
+
+.Col-gap--10 {
+  gap: 10px;
+}
+
+.Col-gap--15 {
+  gap: 15px;
+}
+
+.Col-gap--35 {
+  gap: 25px;
+}
+
+.Col-gap--25 {
+  gap: 25px;
+}
+
+.Col-gap--50 {
+  gap: 25px;
+}
+
+.V-Align--center {
+  justify-content: center;
+}
+
+.V-Align--start {
+  justify-content: flex-start;
+}
+
+.V-Align--end {
+  justify-content: flex-end;
+}
+
+.H-Align--center {
+  align-items: center;
+}
+
+.H-Align--start {
+  align-items: flex-start;
+}
+
+.H-Align--end {
+  align-items: flex-end;
+}
+
+@media screen and (min-width: 900px) {
+  .Columns {
+    flex-direction: row;
+  }
+
+  .Col-gap--10 {
+    --gap: 10px;
+    gap: var(--gap);
+  }
+
+  .Col-gap--15 {
+    --gap: 15px;
+    gap: var(--gap);
+  }
+
+  .Col-gap--25 {
+    --gap: 25px;
+    gap: var(--gap);
+  }
+
+  .Col-gap--35 {
+    --gap: 35px;
+    gap: var(--gap);
+  }
+
+  .Col-gap--50 {
+    gap: 50px;
+  }
+
+  .Col-gap--120 {
+    gap: 120px;
+  }
+
+  .Col-gap--25 > .Col-25 {
+    width: calc(25% - 17.5px);
+  }
+
+  .Col-gap--35 > .Col-25 {
+    width: calc(25% - 17.5px);
+  }
+
+  .Col-gap--50 > .Col-25 {
+    width: calc(25% - 25px);
+  }
+
+  .Col-gap--120 > .Col-25 {
+    width: calc(25% - 60px);
+  }
+
+  .Col-25 {
+    width: 25%;
+  }
+
+  .Col-gap--35 > .Col-33 {
+    width: calc(33% - 17.5px);
+  }
+
+  .Col-gap--50 > .Col-33 {
+    width: calc(33% - 33px);
+  }
+
+  .Col-gap--120 > .Col-33 {
+    width: calc(33% - 60px);
+  }
+
+  .Col-33 {
+    width: 33%;
+  }
+
+  .Col-gap--35 > .Col-50 {
+    width: calc(50% - 17.5px);
+  }
+
+  .Col-gap--50 > .Col-50 {
+    width: calc(50% - 25px);
+  }
+
+  .Col-gap--120 > .Col-50 {
+    width: calc(50% - 60px);
+  }
+
+  .Col-50 {
+    width: 50%;
+  }
+
+  .Col-66 {
+    width: 67%;
+  }
+
+  .Col-75 {
+    width: 75%;
+  }
+
+  .Col-100 {
+    width: 100%;
+  }
+}

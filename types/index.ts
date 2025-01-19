@@ -58,18 +58,10 @@ export type PagePayload = {
 }
 
 export type ProjectPayload = {
-  client?: string
-  coverImage?: Image
-  description?: PortableTextBlock[]
-  duration?: {
-    start?: string
-    end?: string
-  }
-  overview?: PortableTextBlock[]
-  site?: string
-  slug: string
-  tags?: string[]
   title?: string
+  slug: string
+  description?: string
+  layoutBlocks: any[]
 }
 
 export type SettingsPayload = {
