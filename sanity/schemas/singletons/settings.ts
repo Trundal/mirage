@@ -1,5 +1,5 @@
 import { CogIcon } from '@sanity/icons'
-import { defineArrayMember, defineField, defineType } from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'settings',
@@ -60,6 +60,26 @@ export default defineType({
           ],
         },
       ],
+    }),
+    defineField({
+      name: 'description',
+      title: 'Footer Description',
+      type: 'blockContent',
+    }),
+    defineField({
+      name: 'email',
+      title: 'Email',
+      type: 'string',
+    }),
+    defineField({
+      name: 'phone',
+      title: 'Phone',
+      type: 'string',
+    }),
+    defineField({
+      name: 'address',
+      title: 'Address',
+      type: 'blockContent',
     }),
   ],
   preview: {

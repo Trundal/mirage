@@ -8,7 +8,7 @@ export type MenuItem = {
 }
 
 export type HeroItem = {
-  image?: Image
+  media?: any[]
   header?: string
   description?: string
 }
@@ -60,6 +60,7 @@ export type PagePayload = {
 export type ProjectPayload = {
   title?: string
   slug: string
+  hero?: HeroItem
   description?: string
   layoutBlocks: any[]
 }
@@ -67,4 +68,8 @@ export type ProjectPayload = {
 export type SettingsPayload = {
   menuItems?: MenuItem[]
   footerItems?: MenuItem[]
+  description?: PortableTextBlock[]
+  email?: string
+  phone?: string
+  address?: PortableTextBlock[]
 }

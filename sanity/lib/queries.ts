@@ -32,6 +32,7 @@ export const projectBySlugQuery = groq`
     description,
     "slug": slug.current,
     title,
+    hero,
     layoutBlocks,
   }
 `
@@ -64,5 +65,9 @@ export const settingsQuery = groq`
       "slug": slug.current,
       title
     },
+    email,
+    phone,
+    address,
+    description
   }
 `

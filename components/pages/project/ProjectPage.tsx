@@ -1,4 +1,4 @@
-import { getComponent } from '@/app/(portfolio)/functions'
+import { getComponent, getMedia } from '@/app/(portfolio)/functions'
 import type { ProjectPayload } from '@/types'
 
 export interface ProjectPageProps {
@@ -6,10 +6,14 @@ export interface ProjectPageProps {
 }
 
 export function ProjectPage({ data }: ProjectPageProps) {
-  // Default to an empty object to allow previews on non-existent documents
-  const { description, title, layoutBlocks } = data ?? {}
+  const { hero, layoutBlocks } = data ?? {}
 
-  return <div>{layoutBlocks?.map((block) => getComponent(block))}</div>
+  return (
+    <div>
+      {hero?.media?.map((media) => getMedia(media))}
+      {layoutBlocks?.map((block) => getComponent(block))}
+    </div>
+  )
 }
 
 export default ProjectPage

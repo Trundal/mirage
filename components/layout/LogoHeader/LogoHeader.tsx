@@ -7,7 +7,6 @@ export default function LogoHeader() {
       <Logo />
       <div className={styles.titleWrapper}>
         <div className={styles.name}>MIRAGE VIRTUAL ART DEPARTMENT GMBH</div>
-        <div className={styles.date}>EST. 2022</div>
       </div>
     </div>
   )

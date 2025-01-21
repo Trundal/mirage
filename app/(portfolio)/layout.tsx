@@ -7,9 +7,9 @@ import { draftMode } from 'next/headers'
 import { toPlainText } from 'next-sanity'
 import { Suspense } from 'react'
 
+import { Footer } from '@/components/global/Footer'
 import { Navbar } from '@/components/global/Navbar'
 import PageContainer from '@/components/layout/Container/Container'
-import { urlForOpenGraphImage } from '@/sanity/lib/utils'
 import { loadHomePage, loadSettings } from '@/sanity/loader/loadQuery'
 
 const LiveVisualEditing = dynamic(
@@ -51,6 +51,7 @@ export default async function IndexRoute({
         <Suspense>
           <Navbar />
         </Suspense>
+        <Footer />
       </PageContainer>
       {draftMode().isEnabled && <LiveVisualEditing />}
     </>
