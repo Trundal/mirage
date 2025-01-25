@@ -10,8 +10,12 @@ export default defineType({
       title: 'Single Column',
       type: 'array',
       of: [
-        defineArrayMember({ type: 'imageObject' }), // Import from image.ts
-        defineArrayMember({ type: 'video' }), // Import from video.ts
+        defineArrayMember({ type: 'imageObject' }),
+        defineArrayMember({ type: 'video' }),
+        defineArrayMember({
+          type: 'reference',
+          to: [{ type: 'project' }],
+        }),
       ],
       description: 'Add an image or video for the hero component.',
       validation: (Rule) =>

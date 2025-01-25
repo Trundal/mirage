@@ -1,0 +1,52 @@
+.h1,
+.h2,
+.h3,
+.h5 {
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+.h1 {
+  font-size: 72px;
+  font-style: normal;
+  font-family: var(--font-bison);
+  font-weight: 300;
+  line-height: 80px;
+  letter-spacing: -1.08px;
+}
+
+.h2 {
+  font-size: 48px;
+  font-family: var(--font-bison);
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.h3 {
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 65px;
+}
+
+.h5 {
+  font-family: var(--font-bison);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+@media screen and (max-width: 899px) {
+  .h1 {
+    font-size: 48px;
+    line-height: 48px; /* 100% */
+    letter-spacing: -0.72px;
+  }
+  .HeroSearchBar {
+    margin-top: -50px;
+  }
+  .HeroSearchContainer {
+    padding-top: 273px;
+  }
+}

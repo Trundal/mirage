@@ -14,7 +14,7 @@ type Props = {
 
 export default function HomePagePreview(props: Props) {
   const { initial } = props
-  const { data, encodeDataAttribute } = useQuery<HomePagePayload | null>(
+  const { data } = useQuery<HomePagePayload | null>(
     homePageQuery,
     {},
     { initial },
@@ -28,5 +28,5 @@ export default function HomePagePreview(props: Props) {
     )
   }
 
-  return <HomePage />
+  return <HomePage data={initial.data} />
 }

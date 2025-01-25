@@ -24,28 +24,29 @@ export type MilestoneItem = {
   title?: string
 }
 
-export type ShowcaseProject = {
-  _type: string
-  coverImage?: Image
-  overview?: PortableTextBlock[]
-  slug?: string
-  tags?: string[]
-  title?: string
-}
+// export type ShowcaseProject = {
+//   _type: string
+//   coverImage?: Image
+//   overview?: PortableTextBlock[]
+//   slug?: string
+//   tags?: string[]
+//   title?: string
+// }
 
 // Page payloads
 
 export type HomePagePayload = {
   footer?: PortableTextBlock[]
   overview?: PortableTextBlock[]
-  showcaseProjects?: ShowcaseProject[]
   title?: string
+  divider: string
+  layoutBlocks?: any[]
 }
 
 export type PortfolioPagePayload = {
   footer?: PortableTextBlock[]
   overview?: PortableTextBlock[]
-  showcaseProjects?: ShowcaseProject[]
+  // showcaseProjects?: ShowcaseProject[]
   title?: string
 }
 
@@ -61,6 +62,9 @@ export type ProjectPayload = {
   title?: string
   slug: string
   hero?: HeroItem
+  name: string
+  client: string
+  imageObject?: Image
   description?: string
   layoutBlocks: any[]
 }

@@ -59,16 +59,24 @@ export default defineType({
       validation: (rule) => rule.max(155).required(),
     }),
     defineField({
-      name: 'showcaseProjects',
-      title: 'Showcase projects',
-      description:
-        'These are the projects that will appear first on your landing page.',
+      name: 'divider',
+      description: 'The "Below the Fold" divider text.',
+      title: 'Divider',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'layoutBlocks',
+      title: 'Layout Blocks (Rows)',
+      description: 'Stack layout blocks to build rows of content',
       type: 'array',
       of: [
-        defineArrayMember({
-          type: 'reference',
-          to: [{ type: 'project' }],
-        }),
+        { type: 'single_100' },
+        { type: 'double_33x66' },
+        { type: 'double_50x50' },
+        { type: 'double_66x33' },
+        { type: 'triple_33x33x33' },
+        { type: 'divider' },
       ],
     }),
   ],

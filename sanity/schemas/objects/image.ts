@@ -14,31 +14,34 @@ export default defineType({
       options: {
         hotspot: true,
       },
-      preview: {
-        select: {
-          media: 'asset',
-          title: 'caption',
-        },
-      },
       fields: [
-        defineField({
-          title: 'Caption',
-          name: 'caption',
-          type: 'string',
-        }),
         defineField({
           name: 'alt',
           type: 'string',
           title: 'Alt text',
           description:
-            'Alternative text for screenreaders. Falls back on caption if not set',
+            'Alternative text for screenreaders. Falls back on project name if not set',
         }),
         defineField({
-          name: 'tint',
-          title: 'Tint',
-          type: 'number',
-          description: 'Optional: Percentage of image tint from 0-100%',
-          validation: (rule) => rule.min(0).max(100),
+          name: 'projectReference',
+          type: 'string',
+          title: 'Project Reference',
+          description:
+            'Optional: This creates a link to an existing project. NOTE: This is the same value as "slug" on the project page.',
+        }),
+        defineField({
+          title: 'Project Name',
+          name: 'projectName',
+          type: 'string',
+          hidden: ({ parent }: { parent?: { projectReference?: string } }) =>
+            !parent?.projectReference,
+        }),
+        defineField({
+          title: 'Client Name',
+          name: 'clientName',
+          type: 'string',
+          hidden: ({ parent }: { parent?: { projectReference?: string } }) =>
+            !parent?.projectReference,
         }),
       ],
     }),

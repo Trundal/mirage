@@ -1,0 +1,27 @@
+.footerWrapper {
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.descriptionText {
+  width: 550px;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 48px;
+  text-align: left;
+  text-decoration-skip-ink: none;
+}
+
+.contactWrapper {
+  width: 40%;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  text-decoration-skip-ink: none;
+}
+
+.addressText {
+  margin-top: 24px;
+}

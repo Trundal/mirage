@@ -10,30 +10,32 @@ export default defineType({
       title: 'Left Column (33%)',
       type: 'array',
       of: [
-        defineArrayMember({ type: 'imageObject' }), // Import from image.ts
-        defineArrayMember({ type: 'video' }), // Import from video.ts
+        defineArrayMember({ type: 'imageObject' }),
+        defineArrayMember({ type: 'video' }),
+        defineArrayMember({
+          type: 'reference',
+          to: [{ type: 'project' }],
+        }),
       ],
       description: 'Add an image or video for the hero component.',
       validation: (Rule) =>
-        Rule.required()
-          .min(1)
-          .max(1)
-          .error('Select one media item (image or video).'),
+        Rule.max(1).error('Select one media item (image or video).'),
     }),
     defineField({
       name: 'right66',
       title: 'Right Column (66%)',
       type: 'array',
       of: [
-        defineArrayMember({ type: 'imageObject' }), // Import from image.ts
-        defineArrayMember({ type: 'video' }), // Import from video.ts
+        defineArrayMember({ type: 'imageObject' }),
+        defineArrayMember({ type: 'video' }),
+        defineArrayMember({
+          type: 'reference',
+          to: [{ type: 'project' }],
+        }),
       ],
       description: 'Add an image or video for the hero component.',
       validation: (Rule) =>
-        Rule.required()
-          .min(1)
-          .max(1)
-          .error('Select one media item (image or video).'),
+        Rule.max(1).error('Select one media item (image or video).'),
     }),
   ],
 })
