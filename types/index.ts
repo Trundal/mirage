@@ -24,15 +24,6 @@ export type MilestoneItem = {
   title?: string
 }
 
-// export type ShowcaseProject = {
-//   _type: string
-//   coverImage?: Image
-//   overview?: PortableTextBlock[]
-//   slug?: string
-//   tags?: string[]
-//   title?: string
-// }
-
 // Page payloads
 
 export type HomePagePayload = {
@@ -41,12 +32,12 @@ export type HomePagePayload = {
   title?: string
   divider: string
   layoutBlocks?: any[]
+  layoutBlocks_ref?: any[]
 }
 
 export type PortfolioPagePayload = {
   footer?: PortableTextBlock[]
   overview?: PortableTextBlock[]
-  // showcaseProjects?: ShowcaseProject[]
   title?: string
 }
 
@@ -64,9 +55,12 @@ export type ProjectPayload = {
   hero?: HeroItem
   name: string
   client: string
+  coverImage: Image
   imageObject?: Image
   description?: string
   layoutBlocks: any[]
+  dividerText: string
+  btsBlocks: any[]
 }
 
 export type SettingsPayload = {

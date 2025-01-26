@@ -6,12 +6,16 @@ export interface ProjectPageProps {
 }
 
 export function ProjectPage({ data }: ProjectPageProps) {
-  const { hero, layoutBlocks } = data ?? {}
+  const { hero, layoutBlocks, dividerText, btsBlocks } = data ?? {}
 
   return (
     <div>
       {hero?.media?.map((media) => getMedia(media))}
-      {layoutBlocks?.map((block) => getComponent(block))}
+      {layoutBlocks && (
+        <div>{layoutBlocks.map((block) => getComponent(block))}</div>
+      )}
+      {dividerText && <div>{dividerText}</div>}
+      {btsBlocks && <div>{btsBlocks.map((block) => getComponent(block))}</div>}
     </div>
   )
 }

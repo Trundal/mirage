@@ -1,12 +1,30 @@
 import { groq } from 'next-sanity'
 
+const projectSummaryFields = `{
+  "slug": slug.current,
+  client,
+  coverImage,
+  name
+}`
+
 export const homePageQuery = groq`
   *[_type == "home"][0]{
     _id,
     overview,
     title,
     divider,
-    layoutBlocks
+    layoutBlocks,
+    layoutBlocks_ref[]{
+      ...,
+      left33_ref->${projectSummaryFields},
+      center33_ref->${projectSummaryFields},
+      right33_ref->${projectSummaryFields},
+      left50_ref->${projectSummaryFields},
+      right50_ref->${projectSummaryFields},
+      left66_ref->${projectSummaryFields},
+      right66_ref->${projectSummaryFields},
+      singleColumn_ref->${projectSummaryFields},
+    }
   }
 `
 
@@ -18,9 +36,13 @@ export const projectBySlugQuery = groq`
     title,
     name,
     client,
+    project,
+    coverImage,
     imageObject,
     hero,
     layoutBlocks,
+    dividerText,
+    btsBlocks
   }
 `
 

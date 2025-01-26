@@ -30,6 +30,13 @@ import video from '@/sanity/schemas/objects/video'
 import home from '@/sanity/schemas/singletons/home'
 import portfolio from '@/sanity/schemas/singletons/portfolio'
 import settings from '@/sanity/schemas/singletons/settings'
+import freeText from '@/sanity/schemas/objects/freeText'
+import single_100_ref from '@/sanity/schemas/references/single_100_ref'
+import double_33x66_ref from '@/sanity/schemas/references/double_33x66_ref'
+import double_50x50_ref from '@/sanity/schemas/references/double_50x50_ref'
+import double_66x33_ref from '@/sanity/schemas/references/double_66x33_ref'
+import triple_33x33x33_ref from '@/sanity/schemas/references/triple_33x33x33_ref'
+import coverImage from '@/sanity/schemas/objects/coverImage'
 
 const title =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE ||
@@ -58,12 +65,20 @@ export default defineConfig({
       double_50x50,
       double_66x33,
       triple_33x33x33,
+      // References
+      single_100_ref,
+      double_33x66_ref,
+      double_50x50_ref,
+      double_66x33_ref,
+      triple_33x33x33_ref,
       // Objects
       milestone,
       timeline,
       hero,
       image,
       video,
+      freeText,
+      coverImage,
       blockContent,
     ],
   },

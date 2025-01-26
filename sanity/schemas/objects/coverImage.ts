@@ -2,8 +2,10 @@ import { ImageIcon } from '@sanity/icons'
 import { defineField, defineType } from 'sanity'
 
 export default defineType({
-  name: 'imageObject',
-  title: 'Image',
+  name: 'coverImage',
+  title: 'Cover Image',
+  description:
+    'This image is used for reference links, such as links in the home and portfolio pages',
   type: 'object',
   fields: [
     defineField({
@@ -14,6 +16,7 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
       fields: [
         defineField({
           name: 'alt',

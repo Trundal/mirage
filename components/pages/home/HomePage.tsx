@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
 
-import { getComponent } from '@/app/(portfolio)/functions'
+import { getRefLayout } from '@/app/(portfolio)/functions'
 import Footer from '@/components/layout/Footer/Footer'
 import LogoHeader from '@/components/layout/LogoHeader/LogoHeader'
 import ToPScene from '@/components/Scenes/ToP/ToP'
@@ -14,7 +14,7 @@ export interface HomePageProps {
 }
 
 export default function HomePage({ data }: HomePageProps) {
-  const { layoutBlocks, divider } = data ?? {}
+  const { layoutBlocks_ref, divider } = data ?? {}
 
   return (
     <div className={styles.pageContainer}>
@@ -30,7 +30,7 @@ export default function HomePage({ data }: HomePageProps) {
         <Footer />
       </div>
       {divider && <H3>{divider}</H3>}
-      {layoutBlocks?.map((block) => getComponent(block))}
+      {layoutBlocks_ref?.map((block) => getRefLayout(block))}
     </div>
   )
 }

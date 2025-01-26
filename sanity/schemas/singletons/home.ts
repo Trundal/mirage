@@ -76,7 +76,20 @@ export default defineType({
         { type: 'double_50x50' },
         { type: 'double_66x33' },
         { type: 'triple_33x33x33' },
-        { type: 'divider' },
+      ],
+    }),
+    defineField({
+      name: 'layoutBlocks_ref',
+      title: 'Reference Blocks (Rows)',
+      description:
+        'Stack layout blocks to build rows of content - NOTE: These reference existing projects',
+      type: 'array',
+      of: [
+        { type: 'single_100_ref' },
+        { type: 'double_33x66_ref' },
+        { type: 'double_50x50_ref' },
+        { type: 'double_66x33_ref' },
+        { type: 'triple_33x33x33_ref' },
       ],
     }),
   ],

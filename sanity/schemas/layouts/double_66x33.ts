@@ -1,4 +1,5 @@
-import { defineArrayMember, defineField, defineType } from 'sanity'
+import { defineField, defineType } from 'sanity'
+import { mediaTypes, mediaValidation } from '../utils/utils'
 
 export default defineType({
   name: 'double_66x33',
@@ -9,39 +10,17 @@ export default defineType({
       name: 'left66',
       title: 'Left Column (66%)',
       type: 'array',
-      of: [
-        defineArrayMember({ type: 'imageObject' }), // Import from image.ts
-        defineArrayMember({ type: 'video' }), // Import from video.ts
-        defineArrayMember({
-          type: 'reference',
-          to: [{ type: 'project' }],
-        }),
-      ],
-      description: 'Add an image or video for the hero component.',
-      validation: (Rule) =>
-        Rule.required()
-          .min(1)
-          .max(1)
-          .error('Select one media item (image or video).'),
+      of: mediaTypes,
+      description: 'Add an image or video for the left column.',
+      validation: mediaValidation,
     }),
     defineField({
       name: 'right33',
       title: 'Right Column (33%)',
       type: 'array',
-      of: [
-        defineArrayMember({ type: 'imageObject' }), // Import from image.ts
-        defineArrayMember({ type: 'video' }), // Import from video.ts
-        defineArrayMember({
-          type: 'reference',
-          to: [{ type: 'project' }],
-        }),
-      ],
-      description: 'Add an image or video for the hero component.',
-      validation: (Rule) =>
-        Rule.required()
-          .min(1)
-          .max(1)
-          .error('Select one media item (image or video).'),
+      of: mediaTypes,
+      description: 'Add an image or video for the right column.',
+      validation: mediaValidation,
     }),
   ],
 })
