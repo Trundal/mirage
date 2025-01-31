@@ -30,9 +30,10 @@ export type HomePagePayload = {
   footer?: PortableTextBlock[]
   overview?: PortableTextBlock[]
   title?: string
-  divider: string
-  layoutBlocks?: any[]
-  layoutBlocks_ref?: any[]
+  header1: string
+  layoutBlocks_ref_1?: any[]
+  header2: string
+  layoutBlocks_ref_2?: any[]
 }
 
 export type PortfolioPagePayload = {
@@ -58,9 +59,10 @@ export type ProjectPayload = {
   coverImage: Image
   imageObject?: Image
   description?: string
-  layoutBlocks: any[]
-  dividerText: string
-  btsBlocks: any[]
+  header1: string
+  layoutBlocks_1?: any[]
+  header2: string
+  layoutBlocks_2?: any[]
 }
 
 export type SettingsPayload = {

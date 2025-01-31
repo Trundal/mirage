@@ -15,16 +15,20 @@ type ImageObjectProps = {
 
 export default function ImageObject({
   image,
-  width = 3500,
-  height = 2000,
+  // width = 3500,
+  // height = 2000,
 }: ImageObjectProps) {
-  const imageUrl =
-    image && urlForImage(image)?.height(height).width(width).fit('crop').url()
+  const imageUrl = image && urlForImage(image)?.fit('crop').url()
 
   return (
     <div className={styles.imageWrapper}>
       {imageUrl && (
-        <Image alt={image.alt} width={width} height={height} src={imageUrl} />
+        <img
+          alt={image.alt}
+          // width={width}
+          // height={height}
+          src={imageUrl}
+        />
       )}
     </div>
   )

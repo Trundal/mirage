@@ -7,23 +7,31 @@ const projectSummaryFields = `{
   name
 }`
 
+const referenceBlocks = `
+  left33_ref->${projectSummaryFields},
+  center33_ref->${projectSummaryFields},
+  right33_ref->${projectSummaryFields},
+  left50_ref->${projectSummaryFields},
+  right50_ref->${projectSummaryFields},
+  left66_ref->${projectSummaryFields},
+  right66_ref->${projectSummaryFields},
+  singleColumn_ref->${projectSummaryFields},
+`
+
 export const homePageQuery = groq`
   *[_type == "home"][0]{
     _id,
     overview,
     title,
-    divider,
-    layoutBlocks,
-    layoutBlocks_ref[]{
+    header1,
+    layoutBlocks_ref_1[]{
       ...,
-      left33_ref->${projectSummaryFields},
-      center33_ref->${projectSummaryFields},
-      right33_ref->${projectSummaryFields},
-      left50_ref->${projectSummaryFields},
-      right50_ref->${projectSummaryFields},
-      left66_ref->${projectSummaryFields},
-      right66_ref->${projectSummaryFields},
-      singleColumn_ref->${projectSummaryFields},
+      ${referenceBlocks}
+    },
+    header2,
+    layoutBlocks_ref_2[]{
+      ...,
+      ${referenceBlocks}
     }
   }
 `
@@ -40,9 +48,10 @@ export const projectBySlugQuery = groq`
     coverImage,
     imageObject,
     hero,
-    layoutBlocks,
-    dividerText,
-    btsBlocks
+    header1,
+    layoutBlocks_1,
+    header2,
+    layoutBlocks_2,
   }
 `
 

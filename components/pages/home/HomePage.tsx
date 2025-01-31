@@ -7,14 +7,15 @@ import ToPScene from '@/components/Scenes/ToP/ToP'
 import { HomePagePayload } from '@/types'
 
 import styles from './HomePage.module.css'
-import H3 from '@/components/layout/Text/H3'
+import H1 from '@/components/layout/Text/H1'
 
 export interface HomePageProps {
   data: HomePagePayload | null
 }
 
 export default function HomePage({ data }: HomePageProps) {
-  const { layoutBlocks_ref, divider } = data ?? {}
+  const { header1, layoutBlocks_ref_1, header2, layoutBlocks_ref_2 } =
+    data ?? {}
 
   return (
     <div className={styles.pageContainer}>
@@ -29,8 +30,10 @@ export default function HomePage({ data }: HomePageProps) {
         </div>
         <Footer />
       </div>
-      {divider && <H3>{divider}</H3>}
-      {layoutBlocks_ref?.map((block) => getRefLayout(block))}
+      {header1 && <H1 textAlign="center">{header1}</H1>}
+      {layoutBlocks_ref_1?.map((block) => getRefLayout(block))}
+      {header2 && <H1 textAlign="center">{header2}</H1>}
+      {layoutBlocks_ref_2?.map((block) => getRefLayout(block))}
     </div>
   )
 }

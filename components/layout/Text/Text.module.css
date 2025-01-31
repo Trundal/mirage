@@ -2,25 +2,22 @@
 .h2,
 .h3,
 .h5 {
-  margin-top: 15px;
+  margin-top: 0px;
   margin-bottom: 0px;
 }
 
 .h1 {
-  font-size: 72px;
-  font-style: normal;
-  font-family: var(--font-bison);
-  font-weight: 300;
-  line-height: 80px;
-  letter-spacing: -1.08px;
+  font-size: 128px;
+  font-weight: 400;
+  line-height: 120px;
+  text-decoration-skip-ink: none;
 }
 
 .h2 {
-  font-size: 48px;
-  font-family: var(--font-bison);
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
+  font-size: 100px;
+  font-weight: 400;
+  line-height: 100px;
+  text-decoration-skip-ink: none;
 }
 
 .h3 {
@@ -30,7 +27,6 @@
 }
 
 .h5 {
-  font-family: var(--font-bison);
   font-size: 24px;
   font-style: normal;
   font-weight: 300;

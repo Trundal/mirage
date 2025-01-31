@@ -1,4 +1,5 @@
 .logoWrapper {
+  padding: 25px 0 25px 25px;
   height: 100%;
   z-index: 100;
 }

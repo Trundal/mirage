@@ -55,8 +55,15 @@ export default defineType({
       type: 'hero',
     }),
     defineField({
-      name: 'layoutBlocks',
-      title: 'Project Blocks (Rows)',
+      name: 'header1',
+      description:
+        'Alternate header for section 1. DO NOT USE unless you want to override Project & Client Name that is used as default',
+      title: '(alt) Header 1',
+      type: 'string',
+    }),
+    defineField({
+      name: 'layoutBlocks_1',
+      title: 'Project Blocks, for section 1',
       description: 'Stack these blocks to build rows of content',
       type: 'array',
       of: [
@@ -68,15 +75,15 @@ export default defineType({
       ],
     }),
     defineField({
-      name: 'dividerText',
-      title: 'Section Divider',
+      name: 'header2',
+      description: 'The header text for section 2.',
+      title: 'Section 2 Header',
       type: 'string',
-      description:
-        'Title block for section 2. Intended for the "Behind the Scenes" section',
+      validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'btsBlocks',
-      title: 'BTS Blocks (Rows)',
+      name: 'layoutBlocks_2',
+      title: 'Project Blocks, for section 2',
       description: 'Stack these blocks to build rows of content',
       type: 'array',
       of: [

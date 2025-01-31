@@ -1,7 +1,7 @@
 import styles from './Text.module.css'
 
 type H3Types = {
-  children: string | JSX.Element
+  children: string
 }
 
 export default function H3({ children }: H3Types) {

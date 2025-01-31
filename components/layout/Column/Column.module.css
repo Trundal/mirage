@@ -150,7 +150,7 @@
   }
 
   .Col-33 {
-    width: 33%;
+    width: calc((100% - 20px) / 3);
   }
 
   .Col-gap--35 > .Col-50 {
@@ -170,7 +170,7 @@
   }
 
   .Col-66 {
-    width: 67%;
+    width: 66%;
   }
 
   .Col-75 {
