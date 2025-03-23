@@ -36,6 +36,28 @@ export type HomePagePayload = {
   layoutBlocks_ref_2?: any[]
 }
 
+export type BlogPagePayload = {
+  body?: PortableTextBlock[]
+  footer?: PortableTextBlock[]
+  overview?: PortableTextBlock[]
+  title?: string
+}
+
+export type BlogEntryPayload = {
+  title?: string
+  slug: string
+  hero?: HeroItem
+  name: string
+  client: string
+  coverImage: Image
+  imageObject?: Image
+  description?: string
+  header1: string
+  layoutBlocks_1?: any[]
+  header2: string
+  layoutBlocks_2?: any[]
+}
+
 export type PortfolioPagePayload = {
   footer?: PortableTextBlock[]
   overview?: PortableTextBlock[]

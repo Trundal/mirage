@@ -1,10 +1,10 @@
 import { getComponent, getMedia } from '@/app/(portfolio)/functions'
-import type { ProjectPayload } from '@/types'
-
-import styles from './ProjectPage.module.css'
 import LogoHeader from '@/components/layout/LogoHeader/LogoHeader'
 import H1 from '@/components/layout/Text/H1'
 import H2 from '@/components/layout/Text/H2'
+import type { ProjectPayload } from '@/types'
+
+import styles from './ProjectPage.module.css'
 
 export type ProjectPageProps = {
   data: ProjectPayload | null
@@ -39,7 +39,7 @@ export function ProjectPage({ data }: ProjectPageProps) {
         ) : (
           <>
             <H1 textAlign="center">{name || ''}</H1>
-            <H1 textAlign="center">{client?.toUpperCase() || ''}</H1>
+            <H2 textAlign="center">{client?.toUpperCase() || ''}</H2>
           </>
         )}
       </div>

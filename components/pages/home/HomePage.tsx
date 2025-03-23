@@ -3,11 +3,11 @@ import { Suspense } from 'react'
 import { getRefLayout } from '@/app/(portfolio)/functions'
 import Footer from '@/components/layout/Footer/Footer'
 import LogoHeader from '@/components/layout/LogoHeader/LogoHeader'
+import H1 from '@/components/layout/Text/H1'
 import ToPScene from '@/components/Scenes/ToP/ToP'
 import { HomePagePayload } from '@/types'
 
 import styles from './HomePage.module.css'
-import H1 from '@/components/layout/Text/H1'
 
 export interface HomePageProps {
   data: HomePagePayload | null

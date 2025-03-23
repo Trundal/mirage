@@ -1,16 +1,17 @@
 import LogoHeader from '@/components/layout/LogoHeader/LogoHeader'
 import { CustomPortableText } from '@/components/shared/CustomPortableText'
 import { Header } from '@/components/shared/Header'
-import type { PagePayload } from '@/types'
+import type { BlogPagePayload } from '@/types'
 
-import styles from './Page.module.css'
+import styles from './BlogPage.module.css'
 
-export interface PageProps {
-  data: PagePayload | null
+export type BlogPageProps = {
+  data: BlogPagePayload | null
 }
 
-export default function Page({ data }: PageProps) {
-  const { body, overview, title } = data ?? {}
+export default function BlogPage({ data }: BlogPageProps) {
+  const { footer, body, overview, title } = data ?? {}
+
   return (
     <div className={styles.pageContainer}>
       <LogoHeader />

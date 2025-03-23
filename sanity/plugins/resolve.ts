@@ -28,6 +28,11 @@ export const locations = {
     tone: 'positive',
     locations: [{ title: 'Home', href: resolveHref('home')! }],
   }),
+  blog: defineLocations({
+    message: 'This document is used to render the blog page',
+    tone: 'positive',
+    locations: [{ title: 'Blog', href: resolveHref('blog')! }],
+  }),
   portfolio: defineLocations({
     message: 'This document is used to render the portfolio page',
     tone: 'positive',

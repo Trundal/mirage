@@ -1,10 +1,10 @@
+import { draftMode } from 'next/headers'
 import Link from 'next/link'
 
 import HomePage from '@/components/pages/home/HomePage'
+import HomePagePreview from '@/components/pages/home/HomePagePreview'
 import { studioUrl } from '@/sanity/lib/api'
 import { loadHomePage } from '@/sanity/loader/loadQuery'
-import HomePagePreview from '@/components/pages/home/HomePagePreview'
-import { draftMode } from 'next/headers'
 
 export default async function IndexRoute() {
   const initial = await loadHomePage()

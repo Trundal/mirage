@@ -23,6 +23,9 @@ export default defineType({
               type: 'home',
             },
             {
+              type: 'blog',
+            },
+            {
               type: 'portfolio',
             },
             {
@@ -47,6 +50,9 @@ export default defineType({
           to: [
             {
               type: 'home',
+            },
+            {
+              type: 'blog',
             },
             {
               type: 'portfolio',

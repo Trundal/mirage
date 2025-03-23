@@ -23,6 +23,11 @@ export const homePageQuery = groq`
     _id,
     overview,
     title,
+    projects,
+    layoutBlocks_ref_0[]{
+      ...,
+      ${referenceBlocks}
+    },
     header1,
     layoutBlocks_ref_1[]{
       ...,
@@ -33,6 +38,25 @@ export const homePageQuery = groq`
       ...,
       ${referenceBlocks}
     }
+  }
+`
+
+export const blogEntryBySlugQuery = groq`
+  *[_type == "entry" && slug.current == $slug][0] {
+    _id,
+    description,
+    "slug": slug.current,
+    title,
+    name,
+    client,
+    project,
+    coverImage,
+    imageObject,
+    hero,
+    header1,
+    layoutBlocks_1,
+    header2,
+    layoutBlocks_2,
   }
 `
 
@@ -62,6 +86,23 @@ export const pagesBySlugQuery = groq`
     overview,
     title,
     "slug": slug.current,
+  }
+`
+
+export const blogPageQuery = groq`
+  *[_type == "blog"][0]{
+    _id,
+    overview,
+    description,
+    showcaseProjects[]->{
+      _type,
+      coverImage,
+      overview,
+      "slug": slug.current,
+      tags,
+      title,
+    },
+    title,
   }
 `
 
