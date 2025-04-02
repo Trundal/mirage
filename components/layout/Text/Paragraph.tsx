@@ -1,14 +1,14 @@
 import styles from './Text.module.css'
 
-type H1Types = {
+type PTypes = {
   children?: string | JSX.Element
   textAlign?: 'left' | 'center' | 'right'
 }
 
-export default function H2({ children, textAlign = 'left' }: H1Types) {
+export default function P({ children, textAlign = 'left' }: PTypes) {
   return (
-    <h2 className={styles.h2} style={{ textAlign }}>
+    <p className={styles.p} style={{ textAlign }}>
       {children}
-    </h2>
+    </p>
   )
 }

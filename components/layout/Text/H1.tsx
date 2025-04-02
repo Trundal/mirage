@@ -1,7 +1,7 @@
 import styles from './Text.module.css'
 
 type H1Types = {
-  children: string
+  children?: string | JSX.Element
   textAlign?: 'left' | 'center' | 'right'
 }
 

@@ -1,9 +1,10 @@
 import { Suspense } from 'react'
 
-import { getRefLayout } from '@/app/(portfolio)/functions'
+import { getComponent, getRefLayout } from '@/app/(portfolio)/functions'
 import Footer from '@/components/layout/Footer/Footer'
 import LogoHeader from '@/components/layout/LogoHeader/LogoHeader'
 import H1 from '@/components/layout/Text/H1'
+import P from '@/components/layout/Text/Paragraph'
 import ToPScene from '@/components/Scenes/ToP/ToP'
 import { HomePagePayload } from '@/types'
 
@@ -14,8 +15,18 @@ export interface HomePageProps {
 }
 
 export default function HomePage({ data }: HomePageProps) {
-  const { header1, layoutBlocks_ref_1, header2, layoutBlocks_ref_2 } =
-    data ?? {}
+  const {
+    projectsTitle,
+    projects_ref,
+    vpHeader,
+    vpMedia,
+    vpText,
+    fxHeader,
+    fxMedia,
+    fxText,
+    aboutUsHeader,
+    aboutUsLayout,
+  } = data ?? {}
 
   return (
     <div className={styles.pageContainer}>
@@ -30,10 +41,16 @@ export default function HomePage({ data }: HomePageProps) {
         </div>
         <Footer />
       </div>
-      {header1 && <H1 textAlign="center">{header1}</H1>}
-      {layoutBlocks_ref_1?.map((block) => getRefLayout(block))}
-      {header2 && <H1 textAlign="center">{header2}</H1>}
-      {layoutBlocks_ref_2?.map((block) => getRefLayout(block))}
+      {projectsTitle && <H1 textAlign="center">{projectsTitle}</H1>}
+      {projects_ref?.map((block) => getRefLayout(block))}
+      {vpHeader && <H1 textAlign="center">{vpHeader}</H1>}
+      {vpMedia && getComponent(vpMedia)}
+      {vpText && <P>{vpHeader}</P>}
+      {fxHeader && <H1 textAlign="center">{fxHeader}</H1>}
+      {fxMedia && getComponent(fxMedia)}
+      {fxText && <P>{fxText}</P>}
+      {aboutUsHeader && <H1 textAlign="center">{aboutUsHeader}</H1>}
+      {aboutUsLayout?.map((block) => getComponent(block))}
     </div>
   )
 }

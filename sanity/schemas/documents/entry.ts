@@ -40,10 +40,6 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'hero',
-      type: 'hero',
-    }),
-    defineField({
       name: 'header',
       description:
         'Alternate header for section 1. DO NOT USE unless you want to override Project & Client Name that is used as default',

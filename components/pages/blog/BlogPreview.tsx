@@ -2,7 +2,7 @@
 
 import { type QueryResponseInitial } from '@sanity/react-loader'
 
-import { blogEntryBySlugQuery } from '@/sanity/lib/queries'
+import { blogEntryQuery } from '@/sanity/lib/queries'
 import { useQuery } from '@/sanity/loader/useQuery'
 import { BlogPagePayload } from '@/types'
 
@@ -15,13 +15,9 @@ type Props = {
 
 export default function BlogPreview(props: Props) {
   const { params, initial } = props
-  const { data } = useQuery<BlogPagePayload | null>(
-    blogEntryBySlugQuery,
-    params,
-    {
-      initial,
-    },
-  )
+  const { data } = useQuery<BlogPagePayload | null>(blogEntryQuery, params, {
+    initial,
+  })
 
   return <BlogPage data={data!} />
 }

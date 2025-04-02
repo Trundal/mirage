@@ -1,3 +1,4 @@
+import { getComponent } from '@/app/(portfolio)/functions'
 import LogoHeader from '@/components/layout/LogoHeader/LogoHeader'
 import { CustomPortableText } from '@/components/shared/CustomPortableText'
 import { Header } from '@/components/shared/Header'
@@ -10,7 +11,7 @@ export interface PageProps {
 }
 
 export default function Page({ data }: PageProps) {
-  const { body, overview, title } = data ?? {}
+  const { body, overview, title, layoutBlocks } = data ?? {}
   return (
     <div className={styles.pageContainer}>
       <LogoHeader />
@@ -18,6 +19,7 @@ export default function Page({ data }: PageProps) {
         <Header title={title} description={overview} />
         {body && <CustomPortableText value={body} />}
       </div>
+      {layoutBlocks?.map((block) => getComponent(block))}
     </div>
   )
 }

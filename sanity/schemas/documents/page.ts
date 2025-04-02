@@ -115,6 +115,19 @@ export default defineType({
         }),
       ],
     }),
+    defineField({
+      name: 'layoutBlocks',
+      title: 'Layout Blocks, for custom content',
+      description: 'Stack these blocks to build rows of content',
+      type: 'array',
+      of: [
+        { type: 'single_100' },
+        { type: 'double_33x66' },
+        { type: 'double_50x50' },
+        { type: 'double_66x33' },
+        { type: 'triple_33x33x33' },
+      ],
+    }),
   ],
   preview: {
     select: {

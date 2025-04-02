@@ -13,34 +13,38 @@ export type HeroItem = {
   description?: string
 }
 
-export type MilestoneItem = {
-  description?: string
-  duration?: {
-    start?: string
-    end?: string
-  }
-  image?: Image
-  tags?: string[]
+export type BlogEntries = {
+  _id?: string
+  _type?: string
   title?: string
+  name?: string
+  client?: string
+  coverImage: Image
+  description: string
+  tags: any
+  header: string
+  layoutBlocks: any[]
 }
 
 // Page payloads
 
 export type HomePagePayload = {
-  footer?: PortableTextBlock[]
-  overview?: PortableTextBlock[]
-  title?: string
-  header1: string
-  layoutBlocks_ref_1?: any[]
-  header2: string
-  layoutBlocks_ref_2?: any[]
+  projectsTitle?: string
+  projects_ref?: any[]
+  vpHeader?: string
+  vpMedia?: any
+  vpText?: string
+  fxHeader?: string
+  fxMedia?: any
+  fxText?: string
+  aboutUsHeader?: string
+  aboutUsLayout?: any[]
 }
 
 export type BlogPagePayload = {
-  body?: PortableTextBlock[]
-  footer?: PortableTextBlock[]
-  overview?: PortableTextBlock[]
   title?: string
+  description?: PortableTextBlock[]
+  blogEntries?: BlogEntries[]
 }
 
 export type BlogEntryPayload = {
@@ -70,6 +74,7 @@ export type PagePayload = {
   overview?: PortableTextBlock[]
   title?: string
   slug?: string
+  layoutBlocks?: any[]
 }
 
 export type ProjectPayload = {

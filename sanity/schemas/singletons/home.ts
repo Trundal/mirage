@@ -10,64 +10,15 @@ export default defineType({
   // liveEdit: true,
   fields: [
     defineField({
-      name: 'title',
-      description: 'This field is the title of your personal website.',
-      title: 'Title',
-      type: 'string',
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: 'overview',
-      description:
-        'Used both for the <meta> description tag for SEO, and the personal website subheader.',
-      title: 'Description',
-      type: 'array',
-      of: [
-        // Paragraphs
-        defineArrayMember({
-          lists: [],
-          marks: {
-            annotations: [
-              {
-                name: 'link',
-                type: 'object',
-                title: 'Link',
-                fields: [
-                  {
-                    name: 'href',
-                    type: 'url',
-                    title: 'Url',
-                  },
-                ],
-              },
-            ],
-            decorators: [
-              {
-                title: 'Italic',
-                value: 'em',
-              },
-              {
-                title: 'Strong',
-                value: 'strong',
-              },
-            ],
-          },
-          styles: [],
-          type: 'block',
-        }),
-      ],
-      validation: (rule) => rule.max(155).required(),
-    }),
-    defineField({
-      name: 'projects',
+      name: 'projectsTitle',
       description: 'The header text for selected projects.',
       title: 'Selected Projects',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'layoutBlocks_ref_0',
-      title: 'Reference Blocks, Section 0',
+      name: 'projects_ref',
+      title: 'Reference Blocks for Selected Project',
       description:
         'Stack layout blocks to build rows of content - NOTE: These reference existing projects',
       type: 'array',
@@ -80,45 +31,63 @@ export default defineType({
       ],
     }),
     defineField({
-      name: 'header1',
-      description: 'The header text for section 1.',
-      title: 'Header 1',
+      name: 'vpHeader',
+      description: 'Header Text for Virtual Production Blog link',
+      title: 'Virtual Production Header',
       type: 'string',
-      validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'layoutBlocks_ref_1',
-      title: 'Reference Blocks, Section 1 (Virtual Production)',
+      name: 'vpMedia',
+      description: 'Media for Virtual Production banner',
+      title: 'Virtual Production Media',
+      type: 'single_100',
+    }),
+    defineField({
+      name: 'vpText',
       description:
-        'Stack layout blocks to build rows of content - NOTE: These reference existing projects',
+        'Alternate header for section 1. DO NOT USE unless you want to override Project & Client Name that is used as default',
+      title: '(alt) Header 1',
+      type: 'string',
+    }),
+    defineField({
+      name: 'fxHeader',
+      description:
+        'Alternate header for section 1. DO NOT USE unless you want to override Project & Client Name that is used as default',
+      title: '(alt) Header 1',
+      type: 'string',
+    }),
+    defineField({
+      name: 'fxMedia',
+      description:
+        'Alternate header for section 1. DO NOT USE unless you want to override Project & Client Name that is used as default',
+      title: '(alt) Header 1',
+      type: 'single_100',
+    }),
+    defineField({
+      name: 'fxText',
+      description:
+        'Alternate header for section 1. DO NOT USE unless you want to override Project & Client Name that is used as default',
+      title: '(alt) Header 1',
+      type: 'string',
+    }),
+    defineField({
+      name: 'aboutUsHeader',
+      description:
+        'Alternate header for section 1. DO NOT USE unless you want to override Project & Client Name that is used as default',
+      title: '(alt) Header 1',
+      type: 'string',
+    }),
+    defineField({
+      name: 'aboutUsLayout',
+      title: 'Project Blocks, for About Us section',
+      description: 'Stack these blocks to build rows of content',
       type: 'array',
       of: [
-        { type: 'single_100_ref' },
-        { type: 'double_33x66_ref' },
-        { type: 'double_50x50_ref' },
-        { type: 'double_66x33_ref' },
-        { type: 'triple_33x33x33_ref' },
-      ],
-    }),
-    defineField({
-      name: 'header2',
-      description: 'The header text for section 2 (VFX)',
-      title: 'Header 2',
-      type: 'string',
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: 'layoutBlocks_ref_2',
-      title: 'Reference Blocks, Section 2 (Visual Effects)',
-      description:
-        'Stack layout blocks to build rows of content - NOTE: These reference existing projects',
-      type: 'array',
-      of: [
-        { type: 'single_100_ref' },
-        { type: 'double_33x66_ref' },
-        { type: 'double_50x50_ref' },
-        { type: 'double_66x33_ref' },
-        { type: 'triple_33x33x33_ref' },
+        { type: 'single_100' },
+        { type: 'double_33x66' },
+        { type: 'double_50x50' },
+        { type: 'double_66x33' },
+        { type: 'triple_33x33x33' },
       ],
     }),
   ],
