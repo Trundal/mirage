@@ -1,7 +1,8 @@
 import { getMedia } from '@/app/(portfolio)/functions'
-import Column from '@/components/layout/Column/Column'
-import ColumnContainer from '../Container/Container'
 import ImageReference from '@/components/sanity/media/ImageReference/ImageReference'
+
+import Media from '../../Media/Media'
+import Row from '../../Row/Row'
 
 type Double66x33Types = {
   left66?: any
@@ -17,15 +18,15 @@ export default function Double66x33({
   right33_ref,
 }: Double66x33Types) {
   return (
-    <ColumnContainer>
-      <Column width={66}>
+    <Row>
+      <Media width={66}>
         {left66 && <div>{left66.map((media) => getMedia(media))}</div>}
         {left66_ref && <ImageReference {...left66_ref} />}
-      </Column>
-      <Column width={33}>
+      </Media>
+      <Media width={33}>
         {right33 && <div>{right33.map((media) => getMedia(media))}</div>}
         {right33_ref && <ImageReference {...right33_ref} />}
-      </Column>
-    </ColumnContainer>
+      </Media>
+    </Row>
   )
 }

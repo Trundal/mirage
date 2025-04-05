@@ -29,6 +29,8 @@ export type BlogEntries = {
 // Page payloads
 
 export type HomePagePayload = {
+  title?: string
+  overview?: PortableTextBlock[]
   projectsTitle?: string
   projects_ref?: any[]
   vpHeader?: string

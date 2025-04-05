@@ -1,7 +1,3 @@
-.pageContainer {
-  /* padding: 25px; */
-}
-
 .heroContainer {
   position: relative;
   width: 100vw;
@@ -9,6 +5,11 @@
   display: flex;
   justify-content: space-between;
   padding: 0 50px 50px 0;
+}
+
+.pageContainer {
+  padding: 0 16px;
+  margin-bottom: var(--section-space);
 }
 
 .backgroundContainer {
@@ -28,6 +29,9 @@
   margin: 150px 0 100px;
 }
 
-.subHeaderWrapper {
-  margin: 75px 5px 25px 0;
+.divider {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  margin: 20px 0;
 }

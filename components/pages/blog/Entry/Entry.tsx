@@ -1,7 +1,7 @@
 import { getComponent } from '@/app/(portfolio)/functions'
-import H2 from '@/components/layout/Text/H2'
-import H3 from '@/components/layout/Text/H3'
-import P from '@/components/layout/Text/Paragraph'
+import H2 from '@/components/library/Text/H2'
+import H3 from '@/components/library/Text/H3'
+import P from '@/components/library/Text/Paragraph'
 import type { BlogEntries } from '@/types'
 
 import styles from './BlogPage.module.css'
