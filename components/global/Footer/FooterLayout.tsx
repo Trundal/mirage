@@ -1,8 +1,8 @@
 import { PortableText } from 'next-sanity'
 
-import styles from './Footer.module.css'
-
 import type { SettingsPayload } from '@/types'
+
+import styles from './Footer.module.css'
 
 interface FooterProps {
   data: SettingsPayload

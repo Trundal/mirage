@@ -1,5 +1,31 @@
 .pageContainer {
-  /* padding: 25px; */
+  padding: 0 16px;
+}
+
+.centeredContent {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.headerWrapper {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--block-gap);
+}
+
+.filters {
+  /* width: 320px; */
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: var(--block-gap);
+}
+
+.entries {
+  margin: 150px 0;
 }
 
 .heroContainer {
@@ -22,12 +48,4 @@
 
 .sectionContainer {
   border-right: 8px solid white;
-}
-
-.headerWrapper {
-  margin: 150px 0 100px;
-}
-
-.subHeaderWrapper {
-  margin: 75px 5px 25px 0;
 }

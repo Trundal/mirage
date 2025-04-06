@@ -1,8 +1,8 @@
 import Image from 'next/image'
 
-import styles from './ImageObject.module.css'
-
 import { urlForImage } from '@/sanity/lib/utils'
+
+import styles from './ImageObject.module.css'
 
 type ImageObjectProps = {
   image?: {

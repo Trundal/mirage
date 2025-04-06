@@ -10,8 +10,31 @@ export default defineType({
   // liveEdit: true,
   fields: [
     defineField({
+      name: 'layoutBlocks',
+      title: 'Content Blocks for Blog header content',
+      description:
+        'This loads at the top of the page, so it is recommended to use only 1 block.',
+      type: 'array',
+      of: [
+        { type: 'single_100' },
+        { type: 'double_33x66' },
+        { type: 'double_50x50' },
+        { type: 'double_66x33' },
+        { type: 'triple_33x33x33' },
+      ],
+      validation: (Rule) =>
+        Rule.max(1).error('Only one block is allowed in the blog header'),
+    }),
+    defineField({
       name: 'title',
-      description: 'This field is the title of your blog page.',
+      description: 'This field is the name of the link in the menu (IE: Blog).',
+      title: 'Title',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'header',
+      description: 'This field is the header of your blog page.',
       title: 'Title',
       type: 'string',
       validation: (rule) => rule.required(),
@@ -57,19 +80,6 @@ export default defineType({
         }),
       ],
       validation: (rule) => rule.max(155).required(),
-    }),
-    defineField({
-      name: 'blogEntries',
-      title: 'Blog Entries',
-      description:
-        'This is the order that blog entries will appear on the Blog page.',
-      type: 'array',
-      of: [
-        defineArrayMember({
-          type: 'reference',
-          to: [{ type: 'blogEntry' }],
-        }),
-      ],
     }),
   ],
   preview: {

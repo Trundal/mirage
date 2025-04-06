@@ -1,6 +1,6 @@
-import styles from './TextObject.module.css'
-
 import { PortableText, PortableTextBlock } from 'next-sanity'
+
+import styles from './TextObject.module.css'
 
 type TextObjectProps = {
   textBlock: PortableTextBlock

@@ -5,7 +5,7 @@ import { draftMode } from 'next/headers'
 
 import { client } from '@/sanity/lib/client'
 import {
-  blogPageQuery,
+  blogPageWithEntriesQuery,
   homePageQuery,
   pagesBySlugQuery,
   portfolioPageQuery,
@@ -14,7 +14,7 @@ import {
 } from '@/sanity/lib/queries'
 import { token } from '@/sanity/lib/token'
 import {
-  BlogPagePayload,
+  BlogPageWithEntriesPayload,
   HomePagePayload,
   PagePayload,
   PortfolioPagePayload,
@@ -82,11 +82,11 @@ export function loadHomePage() {
   )
 }
 
-export function loadBlogPage() {
-  return loadQuery<BlogPagePayload | null>(
-    blogPageQuery,
+export function loadBlogPageWithEntries() {
+  return loadQuery<BlogPageWithEntriesPayload | null>(
+    blogPageWithEntriesQuery,
     {},
-    { next: { tags: ['home', 'entry', 'blog'] } },
+    { next: { tags: ['home', 'blog', 'entry'] } },
   )
 }
 

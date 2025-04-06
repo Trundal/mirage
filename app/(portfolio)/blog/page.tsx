@@ -6,7 +6,7 @@ import { notFound } from 'next/navigation'
 import BlogPage from '@/components/pages/blog/BlogPage'
 import BlogPreview from '@/components/pages/blog/BlogPreview'
 import { generateStaticSlugs } from '@/sanity/loader/generateStaticSlugs'
-import { loadBlogPage } from '@/sanity/loader/loadQuery'
+import { loadBlogPageWithEntries } from '@/sanity/loader/loadQuery'
 
 const ProjectPreview = dynamic(
   () => import('@/components/pages/blog/BlogPreview'),
@@ -20,11 +20,11 @@ export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
-  const { data: blog } = await loadBlogPage()
+  const { data: blog } = await loadBlogPageWithEntries()
 
   return {
-    title: blog?.title,
-    // description: blog?.overview,
+    title: blog?.page.title,
+    // description: blog?.page.overview,
   }
 }
 
@@ -32,8 +32,8 @@ export function generateStaticParams() {
   return generateStaticSlugs('project')
 }
 
-export default async function ProjectSlugRoute({ params }: Props) {
-  const initial = await loadBlogPage()
+export default async function BlogPageRoute({ params }: Props) {
+  const initial = await loadBlogPageWithEntries()
 
   if (draftMode().isEnabled) {
     return <BlogPreview params={params} initial={initial} />
@@ -43,5 +43,5 @@ export default async function ProjectSlugRoute({ params }: Props) {
     notFound()
   }
 
-  return <BlogPage data={initial.data} />
+  return <BlogPage page={initial.data.page} entries={initial.data.entries} />
 }

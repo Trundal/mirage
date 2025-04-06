@@ -17,34 +17,31 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'name',
-      title: 'Project Name',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
+      name: 'link',
+      title: 'Link to exisiting project',
+      type: 'reference',
+      to: [{ type: 'project' }],
+      description: 'Link to a project page.',
     }),
     defineField({
-      name: 'client',
-      title: 'Client Name',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'coverImage',
-      type: 'coverImage',
-      validation: (Rule) => Rule.required(),
+      name: 'tags',
+      title: 'Tag Selector',
+      description: 'This tag is required for VP/VFX filtering in the blog.',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'VP', value: 'vp' },
+          { title: 'VFX', value: 'vfx' },
+        ],
+        layout: 'grid',
+      },
     }),
     defineField({
       name: 'description',
       title: 'Description',
       type: 'string',
       validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'header',
-      description:
-        'Alternate header for section 1. DO NOT USE unless you want to override Project & Client Name that is used as default',
-      title: '(alt) Header',
-      type: 'string',
     }),
     defineField({
       name: 'layoutBlocks',

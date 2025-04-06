@@ -38,19 +38,6 @@ export const homePageQuery = groq`
   }
 `
 
-export const blogEntryQuery = groq`
-  *[_type == "entry"][0] {
-    _id,
-    title,
-    name,
-    client,
-    coverImage,
-    description,
-    header,
-    layoutBlocks,
-  }
-`
-
 export const projectBySlugQuery = groq`
   *[_type == "project" && slug.current == $slug][0] {
     _id,
@@ -81,23 +68,51 @@ export const pagesBySlugQuery = groq`
 }
 `
 
-export const blogPageQuery = groq`
-  *[_type == "blog"][0]{
+// export const blogPageQuery = groq`
+//   *[_type == "blog"][0]{
+//     _id,
+//     layoutBlock,
+//     title,
+//     overview
+//   }
+// `
+
+// export const blogEntryQuery = groq`
+//   *[_type == "entry"][0] {
+//     _id,
+//     title,
+//     description,
+//     link[]->{
+//       _type,
+//       "slug": slug.current,
+//     },
+//     tags,
+//     layoutBlocks,
+//   }
+// `
+
+export const blogPageWithEntriesQuery = groq`
+{
+  "page": *[_type == "blog"][0]{
     _id,
     title,
+    header,
+    overview,
+    layoutBlocks
+  },
+  "entries": *[_type == "blogEntry"] | order(_createdAt desc){
+    _id,
+    _createdAt,
+    title,
     description,
-    blogEntries[]->{
+    tags,
+    layoutBlocks,
+    "link": link->{
       _type,
-      title,
-      name,
-      client,
-      coverImage,
-      description,
-      tags,
-      header,
-      layoutBlocks
-    },
+      "slug": slug.current
+    }
   }
+}
 `
 
 export const portfolioPageQuery = groq`

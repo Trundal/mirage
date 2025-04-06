@@ -1,9 +1,9 @@
 import Image from 'next/image'
-
-import styles from './ImageReference.module.css'
+import Link from 'next/link'
 
 import { urlForImage } from '@/sanity/lib/utils'
-import Link from 'next/link'
+
+import styles from './ImageReference.module.css'
 
 type ImageReferenceProps = {
   coverImage: {
