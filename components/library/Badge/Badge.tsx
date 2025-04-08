@@ -1,11 +1,17 @@
 import P from '../Text/Paragraph'
 import styles from './Badge.module.css'
 
-const Badge = ({ text, isSelected = false, handleClick }) => {
+type BadgeTypes = {
+  text: string
+  selected?: boolean
+  handleClick?: (arg0: string) => void
+}
+
+const Badge = ({ text, selected = false, handleClick }: BadgeTypes) => {
   return (
     <div
-      className={`${styles.badge} ${isSelected && styles.selected}`}
-      onClick={() => handleClick(text)}
+      className={`${styles.badge} ${selected && styles.selected}`}
+      onClick={() => handleClick && handleClick(text)}
     >
       <P textAlign="center">{text}</P>
     </div>

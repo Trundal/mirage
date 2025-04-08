@@ -10,22 +10,21 @@ import type { BlogEntryPayload, BlogPagePayload } from '@/types'
 
 import styles from './BlogPage.module.css'
 import BlogEntry from './Entry/Entry'
+import Image from 'next/image'
 
 export type BlogPageProps = {
-  page: BlogPagePayload | null
-  entries: BlogEntryPayload[]
-  selection: string
+  data: {
+    page: BlogPagePayload | null
+    entries: BlogEntryPayload[]
+  }
+  selection?: string
 }
 
 const filterItems = ['all', 'vp', 'vfx']
 
-export default function BlogPage({
-  page,
-  entries,
-  selection = 'all',
-}: BlogPageProps) {
+export default function BlogPage({ data, selection = 'all' }: BlogPageProps) {
   const [filter, setFilter] = useState(selection)
-  const { header, overview, layoutBlocks } = page ?? {}
+  const { header, overview, layoutBlocks } = data.page ?? {}
 
   const handleClick = (text: string) => {
     setFilter(text)
@@ -44,16 +43,29 @@ export default function BlogPage({
           )}
         </div>
         <div className={styles.filters}>
-          {filterItems.map((item) => (
-            <Badge
-              text={item}
-              handleClick={handleClick}
-              isSelected={item === filter}
-            />
-          ))}
+          {filterItems.map((item) => {
+            return (
+              <Badge
+                key={item}
+                text={item}
+                handleClick={handleClick}
+                selected={item === filter}
+              />
+            )
+          })}
+        </div>
+        <div className={styles.headLogo}>
+          <Image
+            src={'/mirage_xxs.gif'}
+            alt="spinning head logo"
+            width={150}
+            height={115}
+          />
         </div>
         <div className={styles.entries}>
-          {entries && <BlogEntry blogEntries={entries} selection={filter} />}
+          {data.entries && (
+            <BlogEntry blogEntries={data.entries} selection={filter} />
+          )}
         </div>
       </div>
     </div>

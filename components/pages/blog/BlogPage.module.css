@@ -24,8 +24,15 @@
   gap: var(--block-gap);
 }
 
+.headLogo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 100px 0;
+}
+
 .entries {
-  margin: 150px 0;
+  margin: 100px 0;
 }
 
 .heroContainer {

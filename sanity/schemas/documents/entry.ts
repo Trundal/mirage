@@ -38,12 +38,6 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'description',
-      title: 'Description',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
       name: 'layoutBlocks',
       title: 'Content Blocks for Blog entries',
       description: 'Stack these blocks to build rows of content',

@@ -81,7 +81,6 @@ export const pagesBySlugQuery = groq`
 //   *[_type == "entry"][0] {
 //     _id,
 //     title,
-//     description,
 //     link[]->{
 //       _type,
 //       "slug": slug.current,
@@ -104,7 +103,6 @@ export const blogPageWithEntriesQuery = groq`
     _id,
     _createdAt,
     title,
-    description,
     tags,
     layoutBlocks,
     "link": link->{

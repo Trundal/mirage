@@ -81,7 +81,6 @@ export type BlogEntryPayload = {
   title?: string
   link?: any
   tags?: string[]
-  description?: string
   layoutBlocks?: any[]
 }
 

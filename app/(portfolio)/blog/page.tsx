@@ -43,5 +43,5 @@ export default async function BlogPageRoute({ params }: Props) {
     notFound()
   }
 
-  return <BlogPage page={initial.data.page} entries={initial.data.entries} />
+  return <BlogPage data={initial.data} />
 }
