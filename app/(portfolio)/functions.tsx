@@ -5,6 +5,7 @@ import Double66x33 from '@/components/layout/Tower/Blocks/Double/Double66x33'
 import SingleColumn from '@/components/layout/Tower/Blocks/Single/Single'
 import Triple33x33x33 from '@/components/layout/Tower/Blocks/Triple/Triple33x33x33'
 import ImageObject from '@/components/sanity/media/ImageObject/ImageObject'
+import MuxVideo from '@/components/sanity/media/MuxVideo/MuxVideo'
 import TextObject from '@/components/sanity/media/TextObject/TextObject'
 
 export const getComponent = (component: any) => {
@@ -47,6 +48,8 @@ export const getRefLayout = (layout: any) => {
 
 export const getMedia = (media: any) => {
   switch (media._type) {
+    case 'video':
+      return <MuxVideo key={media._key} {...media.muxVideo.asset} />
     case 'imageObject':
       return <ImageObject key={media._key} {...media} />
     case 'freeText':

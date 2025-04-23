@@ -6,10 +6,10 @@ export default defineType({
   type: 'object',
   fields: [
     defineField({
-      name: 'videoUrl',
-      title: 'Video URL',
-      type: 'url',
-      description: 'Enter the URL of the video',
+      name: 'muxVideo',
+      title: 'Mux Video File',
+      type: 'mux.video',
+      description: 'Upload your video here: ',
     }),
     defineField({
       name: 'overlayImage',

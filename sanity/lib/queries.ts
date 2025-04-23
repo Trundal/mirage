@@ -7,6 +7,26 @@ const projectSummaryFields = `{
   name
 }`
 
+const muxVideoFields = `
+  muxVideo {
+    asset-> {
+      playbackId,
+      assetId,
+      filename,
+    }
+  }`
+
+const mediaBlocks = `
+  left33[] {..., ${muxVideoFields}},
+  center33[] {..., ${muxVideoFields}},
+  right33[] {..., ${muxVideoFields}},
+  left50[] {..., ${muxVideoFields}},
+  right50[] {..., ${muxVideoFields}},
+  left66[] {..., ${muxVideoFields}},
+  right66[] {..., ${muxVideoFields}},
+  singleColumn[] {..., ${muxVideoFields}},
+`
+
 const referenceBlocks = `
   left33_ref->${projectSummaryFields},
   center33_ref->${projectSummaryFields},
@@ -28,10 +48,16 @@ export const homePageQuery = groq`
       ${referenceBlocks}
     },
     vpHeader,
-    vpMedia,
+    vpMedia {
+      ..., 
+      ${mediaBlocks}
+    },
     vpText,
     fxHeader,
-    fxMedia,
+    fxMedia {
+      ..., 
+      ${mediaBlocks}
+    },
     fxText,
     aboutUsHeader,
     aboutUsLayout,

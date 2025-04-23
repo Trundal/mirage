@@ -1,3 +1,4 @@
+import { withNextVideo } from "next-video/process";
 /** @type {import('next').NextConfig} */
 const config = {
   images: {
@@ -28,4 +29,4 @@ const config = {
   },
 }
 
-export default config
+export default withNextVideo(config);
