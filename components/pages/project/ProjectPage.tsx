@@ -19,8 +19,10 @@ export function ProjectPage({ data }: ProjectPageProps) {
     <div className={styles.pageContainer}>
       <div className={styles.heroContainer}>
         <div>
-          <LogoHeader opacity={0.3} />
           <div className={styles.backgroundContainer}>
+            <div className={styles.logoOverlay}>
+              <LogoHeader opacity={0.3} />
+            </div>
             {hero?.media?.map((media) => getMedia(media))}
           </div>
         </div>
