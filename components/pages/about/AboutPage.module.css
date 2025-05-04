@@ -1,0 +1,56 @@
+.pageContainer {
+  padding: 0 16px;
+}
+
+.centeredContent {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+
+.headerWrapper {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--block-gap);
+}
+
+.filters {
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: var(--block-gap);
+}
+
+.headLogo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 100px 0;
+}
+
+.entries {
+  margin: 100px 0;
+}
+
+.heroContainer {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.backgroundContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sectionContainer {
+  border-right: 8px solid white;
+}

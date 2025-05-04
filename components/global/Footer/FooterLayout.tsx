@@ -2,11 +2,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { PortableText } from 'next-sanity'
 
+import P from '@/components/library/Text/Paragraph'
 import { links } from '@/components/Links/Links.functions'
 import type { SettingsPayload } from '@/types'
 
 import styles from './Footer.module.css'
-import P from '@/components/library/Text/Paragraph'
 
 interface FooterProps {
   data: SettingsPayload

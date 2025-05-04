@@ -89,6 +89,15 @@ export type BlogPageWithEntriesPayload = {
   entries: BlogEntryPayload[]
 }
 
+// ABOUT PAGE
+
+export type AboutPagePayload = {
+  title: string
+  overview?: PortableTextBlock[]
+  banner?: any
+  layout?: any[]
+}
+
 // GENERAL PAGES
 
 export type PagePayload = {

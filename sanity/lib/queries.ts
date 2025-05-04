@@ -64,6 +64,18 @@ export const homePageQuery = groq`
   }
 `
 
+export const aboutPageQuery = groq`
+  *[_type == "about"][0]{
+    _id,
+    overview,
+    banner {
+      ..., 
+      ${mediaBlocks}
+    },
+    layout
+  }
+`
+
 export const projectBySlugQuery = groq`
   *[_type == "project" && slug.current == $slug][0] {
     _id,

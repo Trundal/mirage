@@ -36,6 +36,7 @@ import double_50x50_ref from '@/sanity/schemas/references/double_50x50_ref'
 import double_66x33_ref from '@/sanity/schemas/references/double_66x33_ref'
 import single_100_ref from '@/sanity/schemas/references/single_100_ref'
 import triple_33x33x33_ref from '@/sanity/schemas/references/triple_33x33x33_ref'
+import about from '@/sanity/schemas/singletons/about'
 import blog from '@/sanity/schemas/singletons/blog'
 import home from '@/sanity/schemas/singletons/home'
 import portfolio from '@/sanity/schemas/singletons/portfolio'
@@ -56,6 +57,7 @@ export default defineConfig({
       // Singletons
       home,
       blog,
+      about,
       settings,
       portfolio,
       // Documents
@@ -89,7 +91,7 @@ export default defineConfig({
   },
   plugins: [
     structureTool({
-      structure: pageStructure([home, settings, portfolio, blog]),
+      structure: pageStructure([home, settings, portfolio, blog, about]),
     }),
     presentationTool({
       resolve,
@@ -100,7 +102,7 @@ export default defineConfig({
       },
     }),
     // Configures the global "new document" button, and document actions, to suit the Settings document singleton
-    singletonPlugin([home.name, settings.name, blog.name]),
+    singletonPlugin([home.name, settings.name, blog.name, about.name]),
     // Add an image asset source for Unsplash
     unsplashImageAsset(),
     // Vision lets you query your content with GROQ in the studio
