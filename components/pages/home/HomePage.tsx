@@ -87,7 +87,15 @@ export default function HomePage({ data }: HomePageProps) {
       <Section>
         <Tower>
           <>
-            {aboutUsHeader && <H1 textAlign="center">{aboutUsHeader}</H1>}
+            {aboutUsHeader && (
+              <Link
+                href={{
+                  pathname: '/about',
+                }}
+              >
+                <H1 textAlign="center">{aboutUsHeader}</H1>
+              </Link>
+            )}
             {aboutUsLayout?.map((block) => getComponent(block))}
           </>
         </Tower>
