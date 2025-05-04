@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+import { useSearchParams } from 'next/navigation'
 import { useState } from 'react'
 
 import { getComponent } from '@/app/(portfolio)/functions'
@@ -10,7 +12,6 @@ import type { BlogEntryPayload, BlogPagePayload } from '@/types'
 
 import styles from './BlogPage.module.css'
 import BlogEntry from './Entry/Entry'
-import Image from 'next/image'
 
 export type BlogPageProps = {
   data: {
@@ -22,12 +23,27 @@ export type BlogPageProps = {
 
 const filterItems = ['all', 'vp', 'vfx']
 
-export default function BlogPage({ data, selection = 'all' }: BlogPageProps) {
-  const [filter, setFilter] = useState(selection)
+export default function BlogPage({ data }: BlogPageProps) {
+  const searchParams = useSearchParams()
+  const [filter, setFilter] = useState(searchParams.get('filter') || 'all')
   const { header, overview, layoutBlocks } = data.page ?? {}
 
-  const handleClick = (text: string) => {
-    setFilter(text)
+  const updateURL = (newFilter: string | null) => {
+    const params = new URLSearchParams(searchParams.toString())
+
+    if (newFilter) {
+      params.set('filter', newFilter)
+    } else {
+      params.delete('filter')
+    }
+
+    const query = params.toString()
+    window.history.replaceState(null, '', `/blog${query ? `?${query}` : ''}`)
+  }
+
+  const handleChangeFilter = (newFilter: string) => {
+    setFilter(newFilter)
+    updateURL(newFilter)
   }
 
   return (
@@ -48,7 +64,7 @@ export default function BlogPage({ data, selection = 'all' }: BlogPageProps) {
               <Badge
                 key={item}
                 text={item}
-                handleClick={handleClick}
+                handleClick={handleChangeFilter}
                 selected={item === filter}
               />
             )

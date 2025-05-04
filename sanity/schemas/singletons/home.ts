@@ -33,48 +33,46 @@ export default defineType({
     defineField({
       name: 'vpHeader',
       description: 'Header Text for Virtual Production Blog link',
-      title: 'Virtual Production Header',
+      title: 'Virtual Production - Header',
       type: 'string',
     }),
     defineField({
       name: 'vpMedia',
       description: 'Media for Virtual Production banner',
-      title: 'Virtual Production Media',
+      title: 'Virtual Production - Media',
       type: 'single_100',
     }),
     defineField({
       name: 'vpText',
       description:
         'Alternate header for section 1. DO NOT USE unless you want to override Project & Client Name that is used as default',
-      title: '(alt) Header 1',
+      title: 'Virtual Production - Text',
+      type: 'double_50x50',
+    }),
+    defineField({
+      name: 'vfxHeader',
+      description: 'Header Text for Visual Effects Blog link',
+      title: 'Visual Effects - Header',
       type: 'string',
     }),
     defineField({
-      name: 'fxHeader',
-      description:
-        'Alternate header for section 1. DO NOT USE unless you want to override Project & Client Name that is used as default',
-      title: '(alt) Header 1',
-      type: 'string',
-    }),
-    defineField({
-      name: 'fxMedia',
-      description:
-        'Alternate header for section 1. DO NOT USE unless you want to override Project & Client Name that is used as default',
-      title: '(alt) Header 1',
+      name: 'vfxMedia',
+      description: 'Media for Visual Effects banner',
+      title: 'Visual Effects - Media',
       type: 'single_100',
     }),
     defineField({
-      name: 'fxText',
+      name: 'vfxText',
       description:
         'Alternate header for section 1. DO NOT USE unless you want to override Project & Client Name that is used as default',
-      title: '(alt) Header 1',
-      type: 'string',
+      title: 'Visual Effects - Text',
+      type: 'double_50x50',
     }),
     defineField({
       name: 'aboutUsHeader',
       description:
         'Alternate header for section 1. DO NOT USE unless you want to override Project & Client Name that is used as default',
-      title: '(alt) Header 1',
+      title: 'About Us - Header',
       type: 'string',
     }),
     defineField({

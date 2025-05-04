@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Suspense } from 'react'
 
 import { getComponent, getRefLayout } from '@/app/(portfolio)/functions'
@@ -6,7 +7,6 @@ import LogoHeader from '@/components/layout/LogoHeader/LogoHeader'
 import Section from '@/components/layout/Tower/Blocks/Section/Section'
 import Tower from '@/components/layout/Tower/Tower'
 import H1 from '@/components/library/Text/H1'
-import P from '@/components/library/Text/Paragraph'
 import ToPScene from '@/components/Scenes/ToP/ToP'
 import { HomePagePayload } from '@/types'
 
@@ -23,9 +23,9 @@ export default function HomePage({ data }: HomePageProps) {
     vpHeader,
     vpMedia,
     vpText,
-    fxHeader,
-    fxMedia,
-    fxText,
+    vfxHeader,
+    vfxMedia,
+    vfxText,
     aboutUsHeader,
     aboutUsLayout,
   } = data ?? {}
@@ -54,18 +54,33 @@ export default function HomePage({ data }: HomePageProps) {
       <Section>
         <Tower>
           <>
-            {vpHeader && <H1 textAlign="center">{vpHeader}</H1>}
+            <Link
+              href={{
+                pathname: '/blog',
+                query: { filter: 'vp' },
+              }}
+            >
+              {vpHeader && <H1 textAlign="center">{vpHeader}</H1>}
+            </Link>
             {vpMedia && getComponent(vpMedia)}
-            {vpText && <P>{vpHeader}</P>}
+            {vpText && getComponent(vpText)}
           </>
         </Tower>
       </Section>
       <Section>
         <Tower>
           <>
-            {fxHeader && <H1 textAlign="center">{fxHeader}</H1>}
-            {fxMedia && getComponent(fxMedia)}
-            {fxText && <P>{fxText}</P>}
+            <Link
+              href={{
+                pathname: '/blog',
+                query: { filter: 'vfx' },
+              }}
+            >
+              {vfxHeader && <H1 textAlign="center">{vfxHeader}</H1>}
+            </Link>
+
+            {vfxMedia && getComponent(vfxMedia)}
+            {vfxText && getComponent(vfxText)}
           </>
         </Tower>
       </Section>

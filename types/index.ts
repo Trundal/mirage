@@ -36,9 +36,9 @@ export type HomePagePayload = {
   vpHeader?: string
   vpMedia?: any
   vpText?: string
-  fxHeader?: string
-  fxMedia?: any
-  fxText?: string
+  vfxHeader?: string
+  vfxMedia?: any
+  vfxText?: string
   aboutUsHeader?: string
   aboutUsLayout?: any[]
 }

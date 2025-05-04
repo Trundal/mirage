@@ -25,3 +25,26 @@
 .addressText {
   margin-top: 24px;
 }
+
+.footerLinks {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.homeLink {
+  width: 75px;
+  height: 75px;
+  margin: 20px;
+}
+
+.socialMedia {
+  display: flex;
+  gap: 20px;
+  margin-right: 100px;
+}
+
+.socialMediaLinks {
+  margin-bottom: 20px;
+}

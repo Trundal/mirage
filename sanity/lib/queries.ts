@@ -53,12 +53,12 @@ export const homePageQuery = groq`
       ${mediaBlocks}
     },
     vpText,
-    fxHeader,
-    fxMedia {
+    vfxHeader,
+    vfxMedia {
       ..., 
       ${mediaBlocks}
     },
-    fxText,
+    vfxText,
     aboutUsHeader,
     aboutUsLayout,
   }
