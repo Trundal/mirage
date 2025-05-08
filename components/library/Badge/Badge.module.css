@@ -1,0 +1,13 @@
+.badge {
+  width: 140px;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.badge:hover,
+.selected {
+  background-color: white;
+  color: black;
+}

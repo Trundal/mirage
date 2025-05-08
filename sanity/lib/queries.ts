@@ -1,0 +1,187 @@
+import { groq } from 'next-sanity'
+
+const projectSummaryFields = `{
+  "slug": slug.current,
+  client,
+  coverImage,
+  name
+}`
+
+const muxVideoFields = `
+  muxVideo {
+    asset-> {
+      playbackId,
+      assetId,
+      filename,
+    }
+  }`
+
+const mediaBlocks = `
+  left33[] {..., ${muxVideoFields}},
+  center33[] {..., ${muxVideoFields}},
+  right33[] {..., ${muxVideoFields}},
+  left50[] {..., ${muxVideoFields}},
+  right50[] {..., ${muxVideoFields}},
+  left66[] {..., ${muxVideoFields}},
+  right66[] {..., ${muxVideoFields}},
+  singleColumn[] {..., ${muxVideoFields}},
+`
+
+const referenceBlocks = `
+  left33_ref->${projectSummaryFields},
+  center33_ref->${projectSummaryFields},
+  right33_ref->${projectSummaryFields},
+  left50_ref->${projectSummaryFields},
+  right50_ref->${projectSummaryFields},
+  left66_ref->${projectSummaryFields},
+  right66_ref->${projectSummaryFields},
+  singleColumn_ref->${projectSummaryFields},
+`
+
+export const homePageQuery = groq`
+  *[_type == "home"][0]{
+    _id,
+    title,
+    projectsTitle,
+    projects_ref[]{
+      ...,
+      ${referenceBlocks}
+    },
+    vpHeader,
+    vpMedia {
+      ..., 
+      ${mediaBlocks}
+    },
+    vpText,
+    vfxHeader,
+    vfxMedia {
+      ..., 
+      ${mediaBlocks}
+    },
+    vfxText,
+    aboutUsHeader,
+    aboutUsLayout,
+  }
+`
+
+export const aboutPageQuery = groq`
+  *[_type == "about"][0]{
+    _id,
+    overview,
+    banner {
+      ..., 
+      ${mediaBlocks}
+    },
+    layout
+  }
+`
+
+export const projectBySlugQuery = groq`
+  *[_type == "project" && slug.current == $slug][0] {
+    _id,
+    description,
+    "slug": slug.current,
+    title,
+    name,
+    client,
+    project,
+    coverImage,
+    imageObject,
+    hero,
+    header1,
+    layoutBlocks_1,
+    header2,
+    layoutBlocks_2,
+  }
+`
+
+export const pagesBySlugQuery = groq`
+  *[_type == "page" && slug.current == $slug][0] {
+    _id,
+    body,
+    overview,
+    title,
+    "slug": slug.current,
+    layoutBlocks,
+}
+`
+
+// export const blogPageQuery = groq`
+//   *[_type == "blog"][0]{
+//     _id,
+//     layoutBlock,
+//     title,
+//     overview
+//   }
+// `
+
+// export const blogEntryQuery = groq`
+//   *[_type == "entry"][0] {
+//     _id,
+//     title,
+//     link[]->{
+//       _type,
+//       "slug": slug.current,
+//     },
+//     tags,
+//     layoutBlocks,
+//   }
+// `
+
+export const blogPageWithEntriesQuery = groq`
+{
+  "page": *[_type == "blog"][0]{
+    _id,
+    title,
+    header,
+    overview,
+    layoutBlocks
+  },
+  "entries": *[_type == "blogEntry"] | order(_createdAt desc){
+    _id,
+    _createdAt,
+    title,
+    tags,
+    layoutBlocks,
+    "link": link->{
+      _type,
+      "slug": slug.current
+    }
+  }
+}
+`
+
+export const portfolioPageQuery = groq`
+  *[_type == "portfolio"][0]{
+    _id,
+    overview,
+    showcaseProjects[]->{
+      _type,
+      coverImage,
+      overview,
+      "slug": slug.current,
+      tags,
+      title,
+    },
+    title,
+  }
+`
+
+export const settingsQuery = groq`
+  *[_type == "settings"][0]{
+    menuItems[]->{
+      _type,
+      "slug": slug.current,
+      title
+    },
+    footerItems[]->{
+      _type,
+      "slug": slug.current,
+      title
+    },
+    email,
+    phone,
+    address,
+    description
+  }
+`

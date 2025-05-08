@@ -1,0 +1,26 @@
+.image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.w_33 {
+  flex: 0 0 calc(33.333% - calc(var(--block-gap) * 2 / 3));
+}
+.w_66 {
+  flex: 0 0 calc(66.666% - calc(var(--block-gap) * 1 / 3));
+}
+.w_50 {
+  flex: 0 0 calc(50% - calc(var(--block-gap) / 2));
+}
+.w_100 {
+  flex: 0 0 100%;
+}
+
+@media (max-width: 600px) {
+  .w_33,
+  .w_66,
+  .w_50,
+  .w_100 {
+    flex: 0 0 100%;
+  }
+}

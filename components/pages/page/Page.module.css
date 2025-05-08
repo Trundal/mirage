@@ -1,0 +1,10 @@
+.pageContainer {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.bodyWrapper {
+  flex-basis: 70%;
+  margin: 0 24px;
+}

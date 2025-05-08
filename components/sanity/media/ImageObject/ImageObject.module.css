@@ -1,0 +1,27 @@
+.imageWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.titleWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
+}
+
+.clientText {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: left;
+  text-decoration-skip-ink: none;
+}
+
+.projectText {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+  text-decoration-skip-ink: none;
+}

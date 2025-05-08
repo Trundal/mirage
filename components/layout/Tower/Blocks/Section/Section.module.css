@@ -1,0 +1,9 @@
+.section {
+  margin-bottom: var(--section-space);
+}
+
+@media (max-width: 600px) {
+  .section {
+    margin-bottom: var(--section-space-mobile);
+  }
+}

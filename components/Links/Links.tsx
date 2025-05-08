@@ -1,8 +1,18 @@
-import styles from './Links.module.css'
-import { links } from './Links.functions'
 import Link from 'next/link'
 
-export default function Links() {
+import { MenuItem, SettingsPayload } from '@/types'
+
+import { links } from './Links.functions'
+import styles from './Links.module.css'
+
+type NavbarProps = {
+  data: SettingsPayload
+}
+
+export default function Links(props: NavbarProps) {
+  const { data } = props
+  const menuItems = data?.menuItems || ([] as MenuItem[])
+
   return (
     <div className={styles.linkWrapper}>
       {links.map((link) => (

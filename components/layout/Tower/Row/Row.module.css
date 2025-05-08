@@ -1,0 +1,10 @@
+.row {
+  display: flex;
+  gap: var(--block-gap);
+}
+
+@media (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+}

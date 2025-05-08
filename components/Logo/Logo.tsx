@@ -1,11 +1,14 @@
-import styles from './Logo.module.css'
 import Image from 'next/image'
 
-export default function Logo() {
+import styles from './Logo.module.css'
+
+export default function Logo({ opacity }) {
   return (
-    <div className={styles.logoWrapper}>
-      <img
+    <div className={styles.logoWrapper} style={{ opacity }}>
+      <Image
         src="/mirage_logo_rotated_white_v7.svg"
+        width={217}
+        height={898}
         alt="Logo"
         className={styles.image}
       />

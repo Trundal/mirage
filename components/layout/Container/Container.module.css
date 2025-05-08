@@ -3,11 +3,9 @@
   font-weight: normal;
   font-size: 20px;
   position: relative;
-  display: flex;
-  justify-content: space-between;
   background-color: black;
   color: white;
-  padding: 24px;
+  padding: 0px 50px 0px 0px;
 
   /* old browsers */
   width: 100vw;

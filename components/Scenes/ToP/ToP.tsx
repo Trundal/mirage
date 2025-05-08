@@ -1,8 +1,10 @@
+'use client'
+
+import { Environment, OrbitControls } from '@react-three/drei'
+import { Canvas, useFrame, useLoader } from '@react-three/fiber'
 import React, { Suspense, useRef } from 'react'
-import { Canvas, useLoader, useFrame } from '@react-three/fiber'
 // @ts-ignore
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { Environment, OrbitControls } from '@react-three/drei'
 
 function CustomCanvas() {
   return (

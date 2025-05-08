@@ -1,0 +1,42 @@
+.heroContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.pageContainer {
+  padding: 0 16px;
+  margin-bottom: var(--section-space);
+}
+
+.backgroundContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.sectionContainer {
+  border-right: 8px solid white;
+}
+
+.headerWrapper {
+  margin: 150px 0 100px;
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  margin: 20px 0;
+}
+
+.logoOverlay {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  z-index: 1;
+  height: 100%;
+  padding: 20px 0;
+}
